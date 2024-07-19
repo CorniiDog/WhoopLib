@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>WhoopLibVEXCode Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/dark.css">
+  <link href="prism-vsc-dark-plus.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://prismjs.com/plugins/match-braces/prism-match-braces.css" data-noprefix />
+  <link rel="stylesheet" href="accordify-default.css">
+</head>
+<body>
+  <style>
+    /* Sidebar customization */
+    .sidebar {
+      background-color: #757575; /* Light grey background */
+      width: 300px; /* Adjust the width of the sidebar */
+    }
+    .sidebar-nav > ul {
+      padding-left: 0;
+    }
+    .sidebar-nav li {
+      line-height: 2.6;
+    }
+    .sidebar-toggle {
+      background-color: #757575; /* Light grey background */
+    }
+    .sidebar-toggle-button span {
+      background-color: #500000;
+    }
+    a {
+      color: #500000; 
+    }
+
+    a:hover {
+      color: #722b2b; 
+    }
+
+    a:active {
+      color: #8f6363; 
+    }
+
+    a:visited { /* after the link has been visited */
+      color: #8f6363; /* darker blue */
+    }
+
+    /* Change the glow color of the search input on focus */
+    .search input:focus {
+        box-shadow: 0 0 10px 2px #ffffff; /* Replace #4ec9b0 with your desired glow color */
+        border-color: #500000 ; /* Replace #4ec9b0 with the same or a complementary color */
+    }
+
+
+    /* Styling every second row of tables and tips to dark gray */
+    .markdown-section p.tip, .markdown-section tr:nth-child(2n) {
+      background-color: #333333; /* Dark gray background */
+    }
+
+    :root {
+    --docsifytabs-border-color: #ededed;
+    --docsifytabs-tab-background: #666666;
+    --docsifytabs-tab-highlight-color: #500;
+    }
+    
+  </style>
+  <div id="app"></div>  
+  <script>
+
+    window.$docsify = {
+      name: '',
+      repo: false,  // Disable GitHub corner repo: 'https://github.com/ConnorAtmos/WhoopLibVEXCode',
+      loadSidebar: true, // This ensures the sidebar is loaded
+      subMaxLevel: 2, // Adjust how many header levels to show in the sidebar
+
+      alias: {
+      '/.*/_sidebar.md': '/_sidebar.md'
+      },
+
+      search: 'auto', // default
+
+      search: {
+        maxAge: 86400000, // Expiration time, the default one day
+        paths: 'auto',
+        placeholder: 'Type to search',
+        noData: 'No Results!',
+        // Headline depth, 1 - 6
+        depth: 6,
+        hideOtherSidebarContent: true, // whether or not to hide other sidebar content
+      },
+
+      tabs: {
+        persist    : true,      // default
+        sync       : true,      // default
+        theme      : 'classic', // default
+        tabComments: true,      // default
+        tabHeadings: true       // default
+      },
+
+
+      timeUpdater: {
+        text: ">Published {docsify-updated}",
+        formatUpdated: "{MM}/{DD}/{YYYY}",
+        whereToPlace: "bottom",  // "top" or "bottom", default to "bottom"
+      },
+    }
+  </script>
+
+  <!-- Docsify v4 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+
+  <!-- Custom Prism JS and Plugins -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autolinker/prism-autolinker.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-updated/src/time-updater.min.js"></script>
+
+  <script src="accordify-index.js"></script>
+
+  
+</body>
+</html>
