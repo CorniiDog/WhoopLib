@@ -8,10 +8,9 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/dark.css">
-  <link href="prism-vsc-dark-plus.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://prismjs.com/plugins/match-braces/prism-match-braces.css" data-noprefix />
-  <link rel="stylesheet" href="accordify-default.css">
+  <link rel="stylesheet" href="./resources/dark.css">
+  <link href="./resources/prism-vsc-dark-plus.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./resources/prism-match-braces.css" data-noprefix />
 </head>
 <body>
   <style>
@@ -30,7 +29,7 @@
       background-color: #757575; /* Light grey background */
     }
     .sidebar-toggle-button span {
-      background-color: #500000;
+      background-color: #ffffff;
     }
     a {
       color: #500000; 
@@ -51,7 +50,7 @@
     /* Change the glow color of the search input on focus */
     .search input:focus {
         box-shadow: 0 0 10px 2px #ffffff; /* Replace #4ec9b0 with your desired glow color */
-        border-color: #500000 ; /* Replace #4ec9b0 with the same or a complementary color */
+        border-color: #646464 ; /* Replace #4ec9b0 with the same or a complementary color */
     }
 
 
@@ -63,7 +62,7 @@
     :root {
     --docsifytabs-border-color: #ededed;
     --docsifytabs-tab-background: #666666;
-    --docsifytabs-tab-highlight-color: #500;
+    --docsifytabs-tab-highlight-color: rgb(255, 255, 255);
     }
     
   </style>
@@ -106,27 +105,24 @@
         formatUpdated: "{MM}/{DD}/{YYYY}",
         whereToPlace: "bottom",  // "top" or "bottom", default to "bottom"
       },
+
     }
   </script>
 
   <!-- Docsify v4 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="./resources/docsify@4.js"></script>
   
-  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
-  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+  <script src="./resources/search.min.js"></script>
+  <script src="./resources/docsify-copy-code.min.js"></script>
+  <script src="./resources/docsify-pagination.min.js"></script>
+  <script src="./resources/zoom-image.min.js"></script>
+  <script src="./resources/docsify-tabs@1.js"></script>
 
   <!-- Custom Prism JS and Plugins -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autolinker/prism-autolinker.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify-updated/src/time-updater.min.js"></script>
-
-  <script src="accordify-index.js"></script>
-
-  
+  <script src="./resources/prism-bash.min.js"></script>
+  <script src="./resources/prism-c.min.js"></script>
+  <script src="./resources/prism-cpp.min.js"></script>
+  <script src="./resources/prism-autolinker.min.js"></script>
+  <script src="./resources/time-updater.min.js"></script>
 </body>
 </html>
