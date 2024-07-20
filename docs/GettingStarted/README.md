@@ -1,8 +1,8 @@
 # Getting Started
 
-First of all, if you do not know C++, I would suggest learning it first. Fortunately, we have a modified C++ tutorial at WhoopLib Zero: 
+## Important Notice
 
-[WhoopLib Zero Link](https://connoratmos.github.io/WhoopLibZero/#/)
+#### If you do not know C++, I would suggest learning it first. Fortunately, we have a modified C++ tutorial at WhoopLib Zero: [WhoopLib Zero Link](https://connoratmos.github.io/WhoopLibZero/#/)
 
 
 <!-- tabs:start -->
