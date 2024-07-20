@@ -5,8 +5,10 @@
 
 ![BlackBetty](./images/BlackBetty.jpg)
 
-[VEXCode Github Page](https://github.com/ConnorAtmos/WhoopLibVEXCode)
+[WhoopLib Documentation](https://connoratmos.github.io/WhoopLib/)
 
-[Python Github Page](https://github.com/ConnorAtmos/WhoopLibPython)
+[WhoopLib Zero - Learn C++ From Zero](https://connoratmos.github.io/WhoopLibZero/)
 
-[WhoopLib Zero Link](https://connoratmos.github.io/WhoopLibZero/#/)
+[WhoopLibVEXCode Github](https://github.com/ConnorAtmos/WhoopLibVEXCode)
+
+[WhoopLibPython Github](https://github.com/ConnorAtmos/WhoopLibPython)
