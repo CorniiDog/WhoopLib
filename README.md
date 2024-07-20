@@ -23,7 +23,7 @@ The most advanced SLAM solution in VEX.
 
 [WhoopLib Zero - Learn C++ From Zero](https://connoratmos.github.io/WhoopLibZero/)
 
-[hoopLibVEXCode Github](https://github.com/ConnorAtmos/WhoopLibVEXCode)
+[WhoopLibVEXCode Github](https://github.com/ConnorAtmos/WhoopLibVEXCode)
 
 [WhoopLibPython Github](https://github.com/ConnorAtmos/WhoopLibPython)
 
