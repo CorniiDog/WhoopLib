@@ -7,64 +7,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  
+  <!-- <link rel="stylesheet" href="./resources/dark.css"> -->
+  <link rel="stylesheet" href="./resources/theme-simple-dark.css">
 
-  <link rel="stylesheet" href="./resources/dark.css">
   <link href="./resources/prism-vsc-dark-plus.css" rel="stylesheet" />
   <link rel="stylesheet" href="./resources/prism-match-braces.css" data-noprefix />
 </head>
 <body>
   <style>
-    /* Sidebar customization */
-    .sidebar {
-      background-color: #757575; /* Light grey background */
-      width: 300px; /* Adjust the width of the sidebar */
-    }
-    .sidebar-nav > ul {
-      padding-left: 0;
-    }
-    .sidebar-nav li {
-      line-height: 2.6;
-    }
-    .sidebar-toggle {
-      background-color: #75757500; /* Light grey background */
-    }
-    .sidebar-toggle-button span {
-      background-color: #500000;
-    }
-    a {
-      color: #500000; 
-    }
-
-    a:hover {
-      color: #722b2b; 
-    }
-
-    a:active {
-      color: #8f6363; 
-    }
-
-    a:visited { /* after the link has been visited */
-      color: #8f6363; /* darker blue */
-    }
-
-    /* Change the glow color of the search input on focus */
-    .search input:focus {
-        box-shadow: 0 0 10px 2px #ffffff; /* Replace #4ec9b0 with your desired glow color */
-        border-color: #500000 ; /* Replace #4ec9b0 with the same or a complementary color */
-    }
-
-
-    /* Styling every second row of tables and tips to dark gray */
-    .markdown-section p.tip, .markdown-section tr:nth-child(2n) {
-      background-color: #333333; /* Dark gray background */
-    }
-
     :root {
-    --docsifytabs-border-color: #ededed;
-    --docsifytabs-tab-background: #666666;
-    --docsifytabs-tab-highlight-color: #500;
+      --base-font-size: 16px;
+      --theme-color   : rgb(255, 255, 255);
+      --mono-hue        : 0;
+      --mono-saturation : 0%;
+      --zoomimage-overlay-background: rgba(0, 0, 0, 0.875);
+      --sidebar-width                               : 20rem;
     }
-
   </style>
   <div id="app"></div>  
   <script>
@@ -106,17 +65,53 @@
         whereToPlace: "bottom",  // "top" or "bottom", default to "bottom"
       },
 
+      latex: {
+        inlineMath   : [['$', '$'], ['\\(', '\\)']], // default
+        displayMath  : [['$$', '$$']],               // default
+      },
+
+      themeable: {
+          readyTransition : true, // default
+          responsiveTables: true  // default
+      },
+
+      plugins: [
+        function (hook, vm) {
+          hook.doneEach(function () {
+            var sidebar = document.querySelector('.sidebar');
+            // Check if the image already exists to prevent multiple insertions
+            if (sidebar && !document.getElementById('sidebar-logo')) {
+              var img = document.createElement('img');
+              img.id = 'sidebar-logo'; // Unique identifier for the image
+              img.src = "./images/WhoopLibWhite.png"; // Update the path to your image
+              img.alt = 'WhoopLib';
+              img.style.maxWidth = 'calc(70% - 20px)'; // Adjusts the width to account for side margins
+              img.style.margin = '30px 0px 0px 00px'; // Sets top margin to 20px and others to 10px
+              img.style.display = 'block'; // Ensures the image is a block-level element
+              img.style.marginLeft = 'auto'; // Auto margins for horizontal centering
+              img.style.marginRight = 'auto'; // Auto margins for horizontal centering
+              sidebar.insertBefore(img, sidebar.firstChild);
+            }
+          });
+        }
+      ]
+
     }
   </script>
 
   <!-- Docsify v4 -->
   <script src="./resources/docsify@4.js"></script>
   
+  <script src="./resources/docsify-themeable.min.js"></script>
+
+
   <script src="./resources/search.min.js"></script>
   <script src="./resources/docsify-copy-code.min.js"></script>
   <script src="./resources/docsify-pagination.min.js"></script>
   <script src="./resources/zoom-image.min.js"></script>
   <script src="./resources/docsify-tabs@1.js"></script>
+  <script src="./resources/tex-mml-chtml.js"></script>
+  <script src="./resources/docsify-latex@0.js"></script>
 
   <!-- Custom Prism JS and Plugins -->
   <script src="./resources/prism-bash.min.js"></script>

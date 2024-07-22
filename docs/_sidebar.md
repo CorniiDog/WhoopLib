@@ -1,6 +1,3 @@
-<div align="center">
-  <img src="./images/WhoopLibWhiteTiny.png" alt="WhoopLib Logo"></img>
-</div>
 
 - [Home](/)
 - [Getting Started](GettingStarted/README.md)
