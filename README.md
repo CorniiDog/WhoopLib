@@ -38,7 +38,6 @@ The most advanced SLAM solution in VEX.
 - Dubins-Curves Path Creation, thanks to Andrew Walker
 - Pure Pursuit Algorithm
 - Moving between Point A and Point B
-- Rolling Average, Kalman, and Low-Pass Filters
 - General PID, modified from JAR-Template
 - Turning by degrees, Turning to degrees, Turning to Face x and y Coordinates
 - Moving Forward and Reverse Functions, alongside Remembering Previous Movement Positions for Improved Resilience

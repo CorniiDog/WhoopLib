@@ -1,8 +1,7 @@
 # Getting Started
 
-## Important Notice
-
-#### If you do not know C++, I would suggest learning it first. Fortunately, Connor White has a C++ tutorial at [WhoopLib Zero](https://connoratmos.github.io/WhoopLibZero/#/)
+## If you do not know C++
+I would suggest learning it first. Fortunately, Connor White has a C++ tutorial at [WhoopLib Zero](https://connoratmos.github.io/WhoopLibZero/#/)
 
 
 <!-- tabs:start -->
