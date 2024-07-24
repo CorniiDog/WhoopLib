@@ -61,8 +61,6 @@ With "your_jetson_ip" as the ip address of the jetson on the network.
 ```bash
   cd ~/Desktop/WhoopLibPython
 
-  git fetch
-
   git pull
 
   sudo systemctl restart whooplibpython.service
