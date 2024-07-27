@@ -11,4 +11,6 @@
 
 [WhoopLibVEXCode Github](https://github.com/ConnorAtmos/WhoopLibVEXCode)
 
+[WhoopLibPROS Github](https://github.com/ConnorAtmos/WhoopLibPROS)
+
 [WhoopLibPython Github](https://github.com/ConnorAtmos/WhoopLibPython)
