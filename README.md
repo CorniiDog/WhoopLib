@@ -29,6 +29,8 @@ The most advanced SLAM solution in VEX.
 
 [WhoopLibVEXCode Github](https://github.com/ConnorAtmos/WhoopLibVEXCode)
 
+[WhoopLibPROS Github](https://github.com/ConnorAtmos/WhoopLibPROS)
+
 [WhoopLibPython Github](https://github.com/ConnorAtmos/WhoopLibPython)
 
 ## Features
