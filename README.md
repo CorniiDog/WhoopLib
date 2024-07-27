@@ -11,6 +11,8 @@
 
 The most advanced SLAM solution in VEX.
 
+**With both PROS and VEXCode support**
+
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
