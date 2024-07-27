@@ -855,26 +855,43 @@ Pose get_pose();
 
 <!-- tabs:start -->
 
-#### **VEXCode & PROS**
+#### **VEXCode**
 
 ```cpp
-void usercontrol(void)
+void usercontrol()
 {
   robot_drivetrain.set_state(drivetrainState::mode_usercontrol);
 
   // User control code here, inside the loop
-  while (1)
+  while (true)
   {
-    // Drivetrain Odometry
     Pose current_pose = robot_drivetrain.get_pose();
     Brain.Screen.clearLine(4);
     Brain.Screen.setCursor(4, 1);
     Brain.Screen.print("FO (%s): %.1f %.1f %.1f %.1f %.1f %.1f", robot_drivetrain.get_units_str().c_str(), current_pose.x, current_pose.y, current_pose.z, current_pose.pitch, current_pose.yaw, current_pose.roll);
 
-    wait(100, msec);
+    wait(20, msec);
   }
 }
 
+```
+
+#### **PROS**
+
+```cpp
+void opcontrol()
+{
+    robot_drivetrain.set_state(drivetrainState::mode_usercontrol);
+
+    while (true)
+    {
+        Pose current_pose = robot_drivetrain.get_pose();
+        pros::lcd::clear_line(3);
+        pros::lcd::print(3, "FO (%s): %.1f %.1f %.1f %.1f %.1f %.1f", robot_drivetrain.get_units_str().c_str(), current_pose.x, current_pose.y, current_pose.z, current_pose.pitch, current_pose.yaw, current_pose.roll);
+
+        pros::delay(20); // Run for 20 ms then update
+    }
+}
 ```
 
 <!-- tabs:end -->
@@ -897,10 +914,10 @@ void set_pose(double x_in, double y_in, double yaw_deg);
 
 <!-- tabs:start -->
 
-#### **VEXCode & PROS**
+#### **VEXCode**
 
 ```cpp
-void autonomous(void)
+void autonomous()
 {
     robot_drivetrain.set_state(drivetrainState::mode_autonomous);
 
