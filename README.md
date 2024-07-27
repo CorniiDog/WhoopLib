@@ -33,7 +33,7 @@ The most advanced SLAM solution in VEX.
 
 [WhoopLibPython Github](https://github.com/ConnorAtmos/WhoopLibPython)
 
-[Release Notes](https://github.com/ConnorAtmos/WhoopLib/releases/tag/v1.0.0-alpha)
+[Release Notes](https://github.com/ConnorAtmos/WhoopLib/releases/)
 
 ## Features
 
