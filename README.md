@@ -13,7 +13,7 @@ The most advanced SLAM solution in VEX.
 
 **With both PROS and VEXCode support**
 
-#### **Heads up:** Slew rate it added, which means I will need to spend some time tuning the slew rate parameters to work with the robot
+#### **Heads up:** Slew rate is added. That does mean I would need to tune the default pure pursuit parameters to work for most robot types.
 
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
