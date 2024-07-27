@@ -30,15 +30,12 @@ In order to create the communication protocol, create the buffer_system object:
 BufferNode buffer_system(
     256,                       // The buffer size, in characters. Increase if necessary, but at the cost of computational efficiency.
     debugmode::debug_disabled, // debugmode::debug_disabled for competition use, debugmode::debug_enabled to allow the code to pass errors through
-    "/dev/serial1"             // The serial connection of the Jetson Nano ("/dev/serial1" is the micro-usb serial connection on the V5 Brain, "/dev/serial2" is controller)
 ); 
 ```
 
 <!-- tabs:end -->
 
 The buffer size is ```256```. That means that all incoming messages together may not exceed ```256``` characters. If it does, increase this size, but at the expense of computational cost.
-
-```/dev/serial1``` is the micro-usb serial connection on the V5 Brain. But if you want to use the Micro-USB port on the controller do ```/dev/serial2```. 
 
 Set ```debugmode::debug_disabled``` at all times, unless you are trying to troubleshoot something. If you are trying to troubleshoot the connection, set ```debugmode::debug_enabled``` to allow errors to pass through.
 
