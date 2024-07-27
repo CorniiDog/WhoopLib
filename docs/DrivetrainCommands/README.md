@@ -732,10 +732,10 @@ void set_state(drivetrainState state);
 
 <!-- tabs:start -->
 
-#### **VEXCode & PROS**
+#### **VEXCode**
 
 ```cpp
-void pre_auton(void)
+void pre_auton()
 {
     // Initializing Robot Configuration. DO NOT REMOVE!
     vexcodeInit();
@@ -743,13 +743,13 @@ void pre_auton(void)
     robot_drivetrain.set_state(drivetrainState::mode_disabled);
 }
 
-void autonomous(void)
+void autonomous()
 {
     robot_drivetrain.set_state(drivetrainState::mode_autonomous);
     // autonomous stuff here
 }
 
-void usercontrol(void)
+void usercontrol()
 {
     robot_drivetrain.set_state(drivetrainState::mode_usercontrol);
 
@@ -757,6 +757,55 @@ void usercontrol(void)
     while (1)
     {
         wait(10, msec);
+    }
+}
+```
+
+#### **PROS**
+
+```cpp
+void disabled()
+{
+    robot_drivetrain.set_state(drivetrainState::mode_disabled);
+}
+
+void autonomous()
+{
+    robot_drivetrain.set_state(drivetrainState::mode_autonomous);
+
+    robot_drivetrain.set_pose_units(PoseUnits::in_deg_cw);
+    robot_drivetrain.set_pose(0, 0, 0);
+
+    // robot_drivetrain.turn_to_position(15, 15);
+    robot_drivetrain.drive_forward(15);
+
+    robot_drivetrain.turn_to(90);
+
+    robot_drivetrain.drive_forward(-15);
+
+    robot_drivetrain.drive_forward(15);
+
+    robot_drivetrain.turn_to(0);
+
+    robot_drivetrain.drive_forward(-15);
+
+    // robot_drivetrain.drive_to_point(15, 15);
+    // robot_drivetrain.reverse_to_point(0,0);
+    robot_drivetrain.drive_through_path({{15, 15, 0}, {0, 0, 90}}, 7);
+    robot_drivetrain.reverse_through_path({{15, 15, 180}, {0, 0, 180}}, 7);
+}
+
+void opcontrol()
+{
+    robot_drivetrain.set_state(drivetrainState::mode_usercontrol);
+
+    while (true)
+    {
+        Pose current_pose = robot_drivetrain.get_pose();
+        pros::lcd::clear_line(3);
+        pros::lcd::print(3, "FO (%s): %.1f %.1f %.1f %.1f %.1f %.1f", robot_drivetrain.get_units_str().c_str(), current_pose.x, current_pose.y, current_pose.z, current_pose.pitch, current_pose.yaw, current_pose.roll);
+
+        pros::delay(20); // Run for 20 ms then update
     }
 }
 ```
@@ -781,16 +830,37 @@ void calibrate();
 
 <!-- tabs:start -->
 
-#### **VEXCode & PROS**
+#### **VEXCode**
 
 ```cpp
-void pre_auton(void) {
+void pre_auton() {
     // Initializing Robot Configuration. DO NOT REMOVE!
     vexcodeInit();
     manager.start();
-    robot_drivetrain.set_state(drivetrainState::mode_disabled);
     jetson_commander.initialize(); // If you don't have Tesseract, omit this line
     robot_drivetrain.calibrate();
+    robot_drivetrain.set_state(drivetrainState::mode_disabled);
+
+}
+```
+
+#### **PROS**
+
+```cpp
+void initialize()
+{
+    pros::lcd::initialize();
+    pros::lcd::set_text(1, "Hello PROS User!");
+    controller1.notify("Initializing");
+    manager.start();
+    jetson_commander.initialize(); // If you don't have Tesseract, omit this line
+    robot_drivetrain.calibrate();
+
+}
+
+void disabled()
+{
+    robot_drivetrain.set_state(drivetrainState::mode_disabled);
 }
 ```
 
@@ -825,7 +895,7 @@ void set_pose_units(PoseUnits units);
 #### **VEXCode & PROS**
 
 ```cpp
-void autonomous(void)
+void autonomous()
 {
     robot_drivetrain.set_state(drivetrainState::mode_autonomous);
 
@@ -914,7 +984,7 @@ void set_pose(double x_in, double y_in, double yaw_deg);
 
 <!-- tabs:start -->
 
-#### **VEXCode**
+#### **VEXCode & PROS**
 
 ```cpp
 void autonomous()
