@@ -15,7 +15,7 @@ void reboot_jetson();
 
 <!-- tabs:start -->
 
-#### **VEXCode**
+#### **VEXCode & PROS**
 
 ```cpp
 jetson_commander.reboot_jetson();
@@ -38,7 +38,7 @@ void shutdown_jetson();
 
 <!-- tabs:start -->
 
-#### **VEXCode**
+#### **VEXCode & PROS**
 
 ```cpp
 jetson_commander.shutdown_jetson();
@@ -63,7 +63,7 @@ void restart_vision_process();
 
 <!-- tabs:start -->
 
-#### **VEXCode**
+#### **VEXCode & PROS**
 
 ```cpp
 jetson_commander.restart_vision_process();
@@ -89,7 +89,7 @@ void initialize();
 
 <!-- tabs:start -->
 
-#### **VEXCode**
+#### **VEXCode & PROS**
 
 ```cpp
 void pre_auton(void)
@@ -124,7 +124,7 @@ bool is_connected_to_jetson();
 
 <!-- tabs:start -->
 
-#### **VEXCode**
+#### **VEXCode & PROS**
 
 ```cpp
 bool is_connected = jetson_commander.is_connected_to_jetson();

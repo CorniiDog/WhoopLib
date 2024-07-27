@@ -23,13 +23,13 @@ In order to create the communication protocol, create the buffer_system object:
 
 <!-- tabs:start -->
 
-#### **VEXCode**
+#### **VEXCode & PROS**
 
 ```cpp
 // Serial communication module
 BufferNode buffer_system(
     256,                       // The buffer size, in characters. Increase if necessary, but at the cost of computational efficiency.
-    debugMode::debug_disabled, // debugMode::debug_disabled for competition use, debugMode::debug_enabled to allow the code to pass errors through
+    debugmode::debug_disabled, // debugmode::debug_disabled for competition use, debugmode::debug_enabled to allow the code to pass errors through
     "/dev/serial1"             // The serial connection of the Jetson Nano ("/dev/serial1" is the micro-usb serial connection on the V5 Brain, "/dev/serial2" is controller)
 ); 
 ```
@@ -40,7 +40,7 @@ The buffer size is ```256```. That means that all incoming messages together may
 
 ```/dev/serial1``` is the micro-usb serial connection on the V5 Brain. But if you want to use the Micro-USB port on the controller do ```/dev/serial2```. 
 
-Set ```debugMode::debug_disabled``` at all times, unless you are trying to troubleshoot something. If you are trying to troubleshoot the connection, set ```debugMode::debug_enabled``` to allow errors to pass through.
+Set ```debugmode::debug_disabled``` at all times, unless you are trying to troubleshoot something. If you are trying to troubleshoot the connection, set ```debugmode::debug_enabled``` to allow errors to pass through.
 
 Next, we establish an offset from the center of the robot. The vision system must face the front of the robot, just to simplify the library.
 
@@ -58,7 +58,7 @@ With this information, we will determine the necessary offsets of the camera fro
 
 <!-- tabs:start -->
 
-#### **VEXCode**
+#### **VEXCode & PROS**
 
 ```cpp
 // Vision Offset of the Vision Tesseract from the Center of Robot
@@ -75,7 +75,7 @@ Then, we create the vision system object and subscribe to the stream ```"P"``` f
 
 <!-- tabs:start -->
 
-#### **VEXCode**
+#### **VEXCode & PROS**
 
 ```cpp
 // Jetson Nano pose retreival object (also configured on Nano-side) 
@@ -93,7 +93,7 @@ Next, we want to create a jetson commander so that the robot can communicate whe
 
 <!-- tabs:start -->
 
-#### **VEXCode**
+#### **VEXCode & PROS**
 
 ```cpp
 // This is the jetson commander. It sends keep-alive messages intermittently and also allows

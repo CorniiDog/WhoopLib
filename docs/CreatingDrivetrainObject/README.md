@@ -11,7 +11,7 @@ If you want to use default parameters that WhoopLib uses, covering the vast majo
 
 <!-- tabs:start -->
 
-#### **VEXCode**
+#### **VEXCode & PROS**
 
 ```cpp
 PursuitParams pursuit_parameters = PursuitParams();
@@ -25,7 +25,7 @@ If you want to tune your own custom-parameters, you can do so via the following:
 
 <!-- tabs:start -->
 
-#### **VEXCode**
+#### **VEXCode & PROS**
 
 ```cpp
 PursuitParams pursuit_parameters(
@@ -79,7 +79,7 @@ That is why WhoopLib uses Dubins-Curves for path generation
 
 <!-- tabs:start -->
 
-#### **VEXCode**
+#### **VEXCode & PROS**
 
 ```cpp
 WhoopDrivetrain robot_drivetrain(

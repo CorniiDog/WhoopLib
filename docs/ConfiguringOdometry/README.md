@@ -11,21 +11,21 @@ Before anything, we need to configure the controller we want to use alongside th
 
 <!-- tabs:start -->
 
-#### **VEXCode**
+#### **VEXCode & PROS**
 
 ```cpp
 // Primary controller
-WhoopController controller1(joystickMode::joystickmode_split_arcade, controllerType::primary);
+WhoopController controller1(joystickmode::joystickmode_tank, controllertype::controller_primary);
 ```
 
 
 <!-- tabs:end -->
 
-As you see, we have initialized the primary controller. If you wish to use the second controller, change controllerType to ```controllerType::partner```.
+As you see, we have initialized the primary controller. If you wish to use the second controller, change `controllertype` to ```controllertype::partner```.
 
 There are several joystick modes:
 
-| ```joystickMode```     | Definition | 
+| ```joystickmode```     | Definition | 
 |----------|:--------:|
 | ```joystickmode_split_arcade```    | Left Joystick Moves Forward/Backward, Right Joystick Turns Left/Right     |
 | ```joystickmode_left_arcade```    | Left Joystick Moves Forward/Backward and Turns Left/Right     |
@@ -38,21 +38,21 @@ Next step is configuring the motors and drive groups using WhoopMotors
 
 <!-- tabs:start -->
 
-#### **VEXCode**
+#### **VEXCode & PROS**
 
 ```cpp
 // Left drive motors
-WhoopMotor l1(PORT12, gearSetting::ratio6_1, reversed::no_reverse);
-WhoopMotor l2(PORT13, gearSetting::ratio6_1, reversed::no_reverse);
-WhoopMotor l3(PORT14, gearSetting::ratio6_1, reversed::no_reverse);
-WhoopMotor l4(PORT15, gearSetting::ratio6_1, reversed::no_reverse);
+WhoopMotor l1(PORT12, cartridge::blue, reversed::no_reverse);
+WhoopMotor l2(PORT13, cartridge::blue, reversed::no_reverse);
+WhoopMotor l3(PORT14, cartridge::blue, reversed::no_reverse);
+WhoopMotor l4(PORT15, cartridge::blue, reversed::no_reverse);
 WhoopMotorGroup left_motors({&l1, &l2, &l3, &l4});
 
 // Right drive motors
-WhoopMotor r1(PORT1, gearSetting::ratio6_1, reversed::yes_reverse);
-WhoopMotor r2(PORT2, gearSetting::ratio6_1, reversed::yes_reverse);
-WhoopMotor r3(PORT3, gearSetting::ratio6_1, reversed::yes_reverse);
-WhoopMotor r4(PORT4, gearSetting::ratio6_1, reversed::yes_reverse);
+WhoopMotor r1(PORT1, cartridge::blue, reversed::yes_reverse);
+WhoopMotor r2(PORT2, cartridge::blue, reversed::yes_reverse);
+WhoopMotor r3(PORT3, cartridge::blue, reversed::yes_reverse);
+WhoopMotor r4(PORT4, cartridge::blue, reversed::yes_reverse);
 WhoopMotorGroup right_motors({&r1, &r2, &r3, &r4});
 ```
 
@@ -65,11 +65,11 @@ Most of this is self-explanatory. However, just for the sake of it:
 
 Gear Setting Options:
 
-| ```gearSetting```     | Definition | 
+| ```cartridge```     | Definition | 
 |----------|:--------:|
-| ```ratio6_1```    | Blue cartridge     |
-| ```ratio18_1```    | Green cartridge     |
-| ```ratio36_1```    | Red cartridge     |
+| ```blue```    | Blue cartridge (600 RPM)     |
+| ```green```    | Green cartridge (200 RPM)    |
+| ```red```    | Red cartridge (100 RPM)    |
 
 Reverse options
 
@@ -86,7 +86,7 @@ You are pretty much required to have an inertial sensor with the robot.
 
 <!-- tabs:start -->
 
-#### **VEXCode**
+#### **VEXCode & PROS**
 
 ```cpp
 WhoopInertial inertial_sensor(PORT7);
@@ -101,7 +101,7 @@ However, forward and sideways trackers are recommended (but optional). These are
 
 <!-- tabs:start -->
 
-#### **VEXCode**
+#### **VEXCode & PROS**
 
 ```cpp
 WhoopRotation forward_tracker(PORT6, reversed::yes_reverse);
@@ -130,7 +130,7 @@ Based upon the following illustration above, with ```2.5189``` inch wheels, the 
 
 <!-- tabs:start -->
 
-#### **VEXCode**
+#### **VEXCode & PROS**
 
 ```cpp
 WhoopDriveOdomUnit odom_unit(
@@ -157,7 +157,7 @@ Based upon the image, the odometry offset would be:
 
 <!-- tabs:start -->
 
-#### **VEXCode**
+#### **VEXCode & PROS**
 
 ```cpp
 WhoopDriveOdomOffset odom_offset(
@@ -179,7 +179,7 @@ For this, you assume that the right wheels is the forwards tracker.
 
 <!-- tabs:start -->
 
-#### **VEXCode**
+#### **VEXCode & PROS**
 
 ```cpp
 WhoopDriveOdomUnit odom_unit(
@@ -206,7 +206,7 @@ The black dot is the center of the odometry unit, while the purple dot is the ce
 
 <!-- tabs:start -->
 
-#### **VEXCode**
+#### **VEXCode & PROS**
 
 ```cpp
 
@@ -229,7 +229,7 @@ If you are not using any trackers, this is very clear-cut.
 
 <!-- tabs:start -->
 
-#### **VEXCode**
+#### **VEXCode & PROS**
 
 ```cpp
 WhoopDriveOdomUnit odom_unit(
@@ -249,7 +249,7 @@ And then configure offset
 
 <!-- tabs:start -->
 
-#### **VEXCode**
+#### **VEXCode & PROS**
 
 ```cpp
 WhoopDriveOdomOffset odom_offset(
