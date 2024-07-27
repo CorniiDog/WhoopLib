@@ -89,7 +89,7 @@ void initialize();
 
 <!-- tabs:start -->
 
-#### **VEXCode & PROS**
+#### **VEXCode**
 
 ```cpp
 void pre_auton(void)
@@ -101,6 +101,26 @@ void pre_auton(void)
   robot_drivetrain.set_state(drivetrainState::mode_disabled);
   controller1.notify("Initializing", 2);
   jetson_commander.initialize(); // Initialize Jetson Commander
+}
+```
+
+#### **PROS**
+
+```cpp
+void initialize()
+{
+    pros::lcd::initialize();
+    pros::lcd::set_text(1, "Hello PROS User!");
+    controller1.notify("Initializing");
+    manager.start();
+    jetson_commander.initialize(); // If you don't have Tesseract, omit this line
+    robot_drivetrain.calibrate();
+
+}
+
+void disabled()
+{
+    robot_drivetrain.set_state(drivetrainState::mode_disabled);
 }
 ```
 
