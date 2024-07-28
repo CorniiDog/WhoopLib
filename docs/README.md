@@ -3,6 +3,9 @@
 
 # The Most Powerful SLAM Solution in VEX.
 
+![GitHub Release](https://img.shields.io/github/v/release/ConnorAtmos/WhoopLib?include_prereleases&style=for-the-badge)
+
+
 ![BlackBetty](./images/BlackBetty.jpg)
 
 [WhoopLib Documentation](https://connoratmos.github.io/WhoopLib/)

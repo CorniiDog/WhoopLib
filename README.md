@@ -20,6 +20,8 @@ The most advanced SLAM solution in VEX.
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
+![GitHub Release](https://img.shields.io/github/v/release/ConnorAtmos/WhoopLib?include_prereleases&style=for-the-badge)
+
 
 ## Links
 
