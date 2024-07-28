@@ -15,12 +15,11 @@ The most advanced SLAM solution in VEX.
 
 #### **Heads up:** Slew rate is added. That does mean I would need to tune the default pure pursuit parameters to work for most robot types.
 
-[![Contributors][contributors-shield]][contributors-url]
+![GitHub Release](https://img.shields.io/github/v/release/ConnorAtmos/WhoopLib?include_prereleases&style=for-the-badge)
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
-![GitHub Release](https://img.shields.io/github/v/release/ConnorAtmos/WhoopLib?include_prereleases&style=for-the-badge)
 
 
 ## Links
@@ -88,8 +87,6 @@ Connor White - connor.sw.personal@gmail.com
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/ConnorAtmos/WhoopLib.svg?style=for-the-badge
-[contributors-url]: https://github.com/ConnorAtmos/WhoopLib/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/ConnorAtmos/WhoopLib.svg?style=for-the-badge
 [forks-url]: https://github.com/ConnorAtmos/WhoopLib/network/members
 [stars-shield]: https://img.shields.io/github/stars/ConnorAtmos/WhoopLib.svg?style=for-the-badge
