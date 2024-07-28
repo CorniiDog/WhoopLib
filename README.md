@@ -21,6 +21,9 @@ The most advanced SLAM solution in VEX.
 [![Issues][issues-shield]][issues-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
+## Getting Started
+
+To start off with WhoopLib, head to: https://connoratmos.github.io/WhoopLib/
 
 ## Links
 
