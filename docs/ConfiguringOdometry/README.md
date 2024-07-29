@@ -150,15 +150,6 @@ Time units are:
 >
 > i.e. `10_sec` == `10000_msec`
 
-WhoopLib has misc units which are:
-
-| Units | Description |
-| --- | --- |
-| `_v` | Volts |
-| `_kp` | PID kP |
-| `_ki` | PID kI |
-| `_kd` | PID kD |
-
 ## Configuring Odometry
 
 Now we are ready for the nitty-gritty. It is time to setup the odometry unit. There are three configurations (pick one):
