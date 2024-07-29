@@ -61,6 +61,20 @@ WhoopMotorGroup right_motors({&r1, &r2, &r3, &r4});
 
 PORT1 is well... Port 1 on the V5 Brain. You can assume the rest for ports 1 through 21.
 
+> [!NOTE]
+> Wait... `PORT1` for PROS too?
+>
+> Yes. WhoopLib is an attempt that adds both PROS and VEXCode functionality into one cohesive system, so WhoopLib adds the VEXCode `PORT1`-`PORT21` enums.
+> However, you can still use default PROS parameters if you are used to such conventions (i.e. for port `1` on the V5 Brain):
+> ```cpp
+> WhoopMotor my_motor(1, cartridge::blue);
+> ```
+> and for reverse:
+> ```cpp
+> WhoopMotor my_motor(-1, cartridge::blue);
+> ```
+>
+
 Most of this is self-explanatory. However, just for the sake of it:
 
 | ```cartridge```     | Definition | 
@@ -120,7 +134,8 @@ The respective linear units are:
 | `_mm` | Millimeters |
 | `_mm` | Meters |
 
->**Note:** Linear units auto-convert to a `double` as meters
+> [!NOTE]
+> Linear units auto-convert to a `double` as meters
 >
 > i.e. `5.2_in` == `0.13208_m` == `132.08_mm`\
 > as 5.2 inches is the same as 0.13208 meters, or 132.08 millimeters
@@ -132,7 +147,8 @@ The respective rotational units are:
 | `_rad` | Radians |
 | `_deg` | Degrees |
 
->**Note:** Rotational units auto-convert to a `double` as radians
+> [!NOTE]
+> Rotational units auto-convert to a `double` as radians
 > 
 > i.e. `45_deg` == `0.785398_rad`\
 > as 45 degrees is the same as π/4 radians, or 0.785398 radians
@@ -144,7 +160,8 @@ Time units are:
 | `_msec` | Milliseconds |
 | `_sec` | Seconds |
 
->**Note:** Time units auto-convert to a `double` as seconds
+> [!NOTE]
+> Time units auto-convert to a `double` as seconds
 >
 > i.e. `10_sec` == `10000_msec`\
 > as 10 seconds is the same as 10,000 milliseconds
