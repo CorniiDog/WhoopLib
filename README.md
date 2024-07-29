@@ -15,11 +15,16 @@ The most advanced SLAM solution in VEX.
 
 #### **Heads up:** Slew rate is added. That does mean I would need to tune the default pure pursuit parameters to work for most robot types.
 
-![GitHub Release](https://img.shields.io/github/v/release/ConnorAtmos/WhoopLib?include_prereleases&style=for-the-badge)
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
+![GitHub Release](https://img.shields.io/github/v/release/ConnorAtmos/WhoopLib?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/ConnorAtmos/WhoopLib?style=for-the-badge&color=%23500)
+![GitHub Repo stars](https://img.shields.io/github/stars/ConnorAtmos/WhoopLib?style=for-the-badge&color=%23500)
+![Github Issues](!https://img.shields.io/github/issues/ConnorAtmos/WhoopLib?style=for-the-badge)
 [![LinkedIn][linkedin-shield]][linkedin-url]
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/connor-white-38a5501a0/
+
 
 ## Getting Started
 
@@ -87,18 +92,4 @@ Distributed under the [MIT](https://choosealicense.com/licenses/mit/) License.
 ## Contact
 
 Connor White - connor.sw.personal@gmail.com
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[forks-shield]: https://img.shields.io/github/forks/ConnorAtmos/WhoopLib.svg?style=for-the-badge
-[forks-url]: https://github.com/ConnorAtmos/WhoopLib/network/members
-[stars-shield]: https://img.shields.io/github/stars/ConnorAtmos/WhoopLib.svg?style=for-the-badge
-[stars-url]: https://github.com/ConnorAtmos/WhoopLib/stargazers
-[issues-shield]: https://img.shields.io/github/issues/ConnorAtmos/WhoopLib.svg?style=for-the-badge
-[issues-url]: https://github.com/ConnorAtmos/WhoopLib/issues
-[license-shield]: https://img.shields.io/github/license/ConnorAtmos/WhoopLib.svg?style=for-the-badge
-[license-url]: https://github.com/ConnorAtmos/WhoopLib/blob/master/LICENSE
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/in/connor-white-38a5501a0/
 
