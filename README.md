@@ -80,7 +80,7 @@ To start off with WhoopLib, head to: https://connoratmos.github.io/WhoopLib/
  - [Librealsense](https://github.com/IntelRealSense/librealsense): Depth Capturing
  - [VEX Robotics](https://github.com/VEX-Robotics-AI)
  - [Andrew Walker](https://github.com/AndrewWalker/Dubins-Curves/tree/master): Path Generation with Dubins-Curves
-  - [LearnCpp](https://www.learncpp.com/): Resource for learning C++
+ - [LearnCpp](https://www.learncpp.com/): Resource for learning C++
 
 <!-- LICENSE -->
 ## License
