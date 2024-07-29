@@ -18,9 +18,14 @@ I would suggest learning it first. Fortunately, Connor White has a C++ tutorial 
     ```bash
     cd Desktop
 
-    git clone --branch v1.0.0-alpha https://github.com/ConnorAtmos/WhoopLibVEXCode
+    git clone https://github.com/ConnorAtmos/WhoopLibVEXCode
 
     ```
+    
+    > Note: If you want to use a specific version of WhoopLib (i.e. `v1.0.0`):
+    > ```bash
+    > git clone --branch v1.0.0 https://github.com/ConnorAtmos/WhoopLibVEXCode
+    > ```
 
 
 3. Open the project in VSCode
@@ -41,9 +46,14 @@ I would suggest learning it first. Fortunately, Connor White has a C++ tutorial 
     ```bash
     cd Desktop
 
-    git clone --branch v1.0.0-alpha https://github.com/ConnorAtmos/WhoopLibPROS
+    git clone https://github.com/ConnorAtmos/WhoopLibPROS
 
     ```
+
+    > Note: If you want to use a specific version of WhoopLib (i.e. `v1.0.0`):
+    > ```bash
+    > git clone --branch v1.0.0 https://github.com/ConnorAtmos/WhoopLibPROS
+    > ```
 
 3. Open the project in VSCode
 
