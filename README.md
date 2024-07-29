@@ -23,7 +23,7 @@ The most advanced SLAM solution in VEX.
 **With both PROS and VEXCode support**
 
 >[!IMPORTANT] 
-> Slew rate is added, however the deftault parameters currently still need tuning
+> Slew rate is added, however the default parameters currently still need tuning
 
 ## Getting Started
 
