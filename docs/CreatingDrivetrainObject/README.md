@@ -45,7 +45,7 @@ PursuitParams pursuit_parameters(
     55_kp,   // Forward (kP) Proportional Tuning
     0.01_ki, // Forward (kI) Integral Tuning
     250_kd,  // Forward (kD) Derivative Tuning
-    2_m,     // The forward distance (error) to activate forward_ki
+    2_in,     // The forward distance (error) to activate forward_ki
     100      // The number of points when generating the path. More points mean higher detail of the path, but at a higher computational cost
 );
 
