@@ -137,7 +137,7 @@ So, just a run-down. Your main.cpp may contain something like:
 #### `main.cpp`
 
 ```cpp
-// Code above...
+// Code and additional configuration above...
 
 ////////////////////////////////////////////////////////////
 /**
@@ -222,7 +222,7 @@ int main() {
 #### `main.cpp`
 
 ```cpp
-// Code above...
+// Code and additional configuration above...
 
 ////////////////////////////////////////////////////////////
 /**
