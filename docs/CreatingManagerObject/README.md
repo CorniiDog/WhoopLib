@@ -139,6 +139,22 @@ So, just a run-down. Your main.cpp may contain something like:
 ```cpp
 // Code above...
 
+////////////////////////////////////////////////////////////
+/**
+ *    Robot Drivetrain and Manager
+ */
+////////////////////////////////////////////////////////////
+WhoopDrivetrain robot_drivetrain(
+    &pursuit_parameters,  // The default pure pursuit parameters for operating the robot in autonomous
+    &odom_fusion,         // Odometry fusion module
+    PoseUnits::in_deg_cw, // Set default pose units if not defined. "m_deg_cw" means "meters, degrees, clockwise-positive yaw", "in_deg_ccw" means "inches, degrees, counter-clockwise-positive yaw", and so forth.
+    &controller1,         // Pointer to the controller
+    &left_motors,         // Pointer to the left motor group (optionally can be a list of motors as well)
+    &right_motors         // Pointer to the right motor group (optionally can be a list of motors as well)
+);
+
+ComputeManager manager({&buffer_system, &jetson_commander, &robot_drivetrain, &controller1});
+
 /*---------------------------------------------------------------------------*/
 /*                          Pre-Autonomous Functions                         */
 /*                                                                           */
@@ -207,6 +223,22 @@ int main() {
 
 ```cpp
 // Code above...
+
+////////////////////////////////////////////////////////////
+/**
+ *    Robot Drivetrain and Manager
+ */
+////////////////////////////////////////////////////////////
+WhoopDrivetrain robot_drivetrain(
+    &pursuit_parameters,  // The default pure pursuit parameters for operating the robot in autonomous
+    &odom_fusion,         // Odometry fusion module
+    PoseUnits::in_deg_cw, // Set default pose units if not defined. "m_deg_cw" means "meters, degrees, clockwise-positive yaw", "in_deg_ccw" means "inches, degrees, counter-clockwise-positive yaw", and so forth.
+    &controller1,         // Pointer to the controller
+    &left_motors,         // Pointer to the left motor group (optionally can be a list of motors as well)
+    &right_motors         // Pointer to the right motor group (optionally can be a list of motors as well)
+);
+
+ComputeManager manager({&buffer_system, &jetson_commander, &robot_drivetrain, &controller1});
 
 /**
  * Runs initialization code. This occurs as soon as the program is started.
