@@ -112,6 +112,53 @@ WhoopRotation sideways_tracker(PORT9, reversed::yes_reverse);
 
 The forward tracker is the tracker that tracks forwards/backwards movement of the robot, while the sideways tracker is the tracker that tracks sideways movement of the robot.
 
+## Before we begin
+
+It's important to note that you will see numbers like `5.2_in`. This is a unit system for WhoopLib that auto-converts units to the standard units that WhoopLib uses (meters, radians). However, you will find that people have different preferences as to whether or not they measure in meters, millimeters, or inches. So, you can use the following units in the WhoopLib library for measurements:
+
+The respective linear units are:
+
+| Units | Description |
+| --- | --- |
+| `_in` | Inches |
+| `_mm` | Millimeters |
+| `_mm` | Meters |
+
+>**Note:** Linear units auto-convert to a `double` as meters
+>
+> i.e. `5.2_in` == `0.13208_m` == `132.08_mm`
+
+The respective rotational units are:
+
+| Units | Description |
+| --- | --- |
+| `_rad` | Radians |
+| `_deg` | Degrees |
+
+>**Note:** Rotational units auto-convert to a `double` as radians
+> 
+> i.e. `45_deg` == `0.785398_rad`
+
+Time units are:
+
+| Units | Description |
+| --- | --- |
+| `_msec` | Milliseconds |
+| `_sec` | Seconds |
+
+>**Note:** Time units auto-convert to a `double` as seconds
+>
+> i.e. `10_sec` == `10000_msec`
+
+WhoopLib has misc units which are:
+
+| Units | Description |
+| --- | --- |
+| `_v` | Volts |
+| `_kp` | PID kP |
+| `_ki` | PID kI |
+| `_kd` | PID kD |
+
 ## Configuring Odometry
 
 Now we are ready for the nitty-gritty. It is time to setup the odometry unit. There are three configurations (pick one):
@@ -145,6 +192,8 @@ WhoopDriveOdomUnit odom_unit(
 ```
 
 <!-- tabs:end -->
+
+Note the `1.51_in` that indicates inches. This is an automatic formatting scheme in C++ in WhoopLib that auto-converts the units to the respective standardizes units (meters and radians).
 
 
 Next is to configure an offset of the odometry unit's center to the center of the robot:
