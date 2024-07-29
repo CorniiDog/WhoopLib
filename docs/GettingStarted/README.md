@@ -67,3 +67,12 @@ I would suggest learning it first. Fortunately, Connor White has a C++ tutorial 
 
 
 <!-- tabs:end -->
+
+> [!TIP]
+> **For experienced users:**
+> - `using namespace whoop;` is the WhoopLib's namespace
+> - `using namespace units;` for the units namespace (units like `5.2_in` for example)
+>
+> These are added by default for newcomers, but you may remove them to be more explicit by
+> removing or commenting out one and/or the other in the `whooplib.h` file:
+> ![Namespaces](../images/Namespaces.png)
