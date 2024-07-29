@@ -279,9 +279,21 @@ As a run-down, your code may look like the following:
 /*----------------------------------------------------------------------------*/
 /*                                                                            */
 /*    Module:       main.cpp                                                  */
-/*    Author:       Aggie Robotics                                            */
+/*    Author:       Connor White -> Aggie Robotics                            */
 /*    Created:      Thu Jun 21 2024                                           */
 /*    Description:  Whooplib Template                                         */
+/*                                                                            */
+/*    Contributions:                                                          */
+/*      2775 Josh:                                                            */
+/*        https://github.com/JacksonAreaRobotics/JAR-Template                 */
+/*      Intel:                                                                */
+/*        https://github.com/IntelRealSense/librealsense                      */
+/*      PiLons:                                                               */
+/*        http://thepilons.ca/wp-content/uploads/2018/10/Tracking.pdf         */
+/*      Andrew Walker:                                                        */
+/*        https://github.com/AndrewWalker/Dubins-Curves/tree/master           */
+/*      Alex:                                                                 */
+/*        https://www.learncpp.com/                                           */
 /*                                                                            */
 /*----------------------------------------------------------------------------*/
 
@@ -352,6 +364,25 @@ WhoopDriveOdomOffset odom_offset(
 
 #### `main.cpp`
 ```cpp
+/**
+ * Module:       main.cpp
+ * Author:       Connor White -> Aggie Robotics
+ * Created:      Thu Jun 21 2024
+ * Description:  Whooplib Template
+ *
+ * Contributions:
+ *   2775 Josh:
+ *      https://github.com/JacksonAreaRobotics/JAR-Template
+ *   Intel:
+ *      https://github.com/IntelRealSense/librealsense
+ *   PiLons:
+ *      http://thepilons.ca/wp-content/uploads/2018/10/Tracking.pdf
+ *   Andrew Walker:
+ *      https://github.com/AndrewWalker/Dubins-Curves/tree/master
+ *   Alex:
+ *      https://www.learncpp.com/
+ *
+ */
 #include "main.h"
 
 ////////////////////////////////////////////////////////////
@@ -419,9 +450,21 @@ WhoopDriveOdomOffset odom_offset(
 /*----------------------------------------------------------------------------*/
 /*                                                                            */
 /*    Module:       main.cpp                                                  */
-/*    Author:       Aggie Robotics                                            */
+/*    Author:       Connor White -> Aggie Robotics                            */
 /*    Created:      Thu Jun 21 2024                                           */
 /*    Description:  Whooplib Template                                         */
+/*                                                                            */
+/*    Contributions:                                                          */
+/*      2775 Josh:                                                            */
+/*        https://github.com/JacksonAreaRobotics/JAR-Template                 */
+/*      Intel:                                                                */
+/*        https://github.com/IntelRealSense/librealsense                      */
+/*      PiLons:                                                               */
+/*        http://thepilons.ca/wp-content/uploads/2018/10/Tracking.pdf         */
+/*      Andrew Walker:                                                        */
+/*        https://github.com/AndrewWalker/Dubins-Curves/tree/master           */
+/*      Alex:                                                                 */
+/*        https://www.learncpp.com/                                           */
 /*                                                                            */
 /*----------------------------------------------------------------------------*/
 
@@ -493,6 +536,25 @@ WhoopDriveOdomOffset odom_offset(
 
 #### `main.cpp`
 ```cpp
+/**
+ * Module:       main.cpp
+ * Author:       Connor White -> Aggie Robotics
+ * Created:      Thu Jun 21 2024
+ * Description:  Whooplib Template
+ *
+ * Contributions:
+ *   2775 Josh:
+ *      https://github.com/JacksonAreaRobotics/JAR-Template
+ *   Intel:
+ *      https://github.com/IntelRealSense/librealsense
+ *   PiLons:
+ *      http://thepilons.ca/wp-content/uploads/2018/10/Tracking.pdf
+ *   Andrew Walker:
+ *      https://github.com/AndrewWalker/Dubins-Curves/tree/master
+ *   Alex:
+ *      https://www.learncpp.com/
+ *
+ */
 #include "main.h"
 
 ////////////////////////////////////////////////////////////
@@ -562,9 +624,21 @@ WhoopDriveOdomOffset odom_offset(
 /*----------------------------------------------------------------------------*/
 /*                                                                            */
 /*    Module:       main.cpp                                                  */
-/*    Author:       Aggie Robotics                                            */
+/*    Author:       Connor White -> Aggie Robotics                            */
 /*    Created:      Thu Jun 21 2024                                           */
 /*    Description:  Whooplib Template                                         */
+/*                                                                            */
+/*    Contributions:                                                          */
+/*      2775 Josh:                                                            */
+/*        https://github.com/JacksonAreaRobotics/JAR-Template                 */
+/*      Intel:                                                                */
+/*        https://github.com/IntelRealSense/librealsense                      */
+/*      PiLons:                                                               */
+/*        http://thepilons.ca/wp-content/uploads/2018/10/Tracking.pdf         */
+/*      Andrew Walker:                                                        */
+/*        https://github.com/AndrewWalker/Dubins-Curves/tree/master           */
+/*      Alex:                                                                 */
+/*        https://www.learncpp.com/                                           */
 /*                                                                            */
 /*----------------------------------------------------------------------------*/
 
@@ -633,6 +707,25 @@ WhoopDriveOdomOffset odom_offset(
 
 #### `main.cpp`
 ```cpp
+/**
+ * Module:       main.cpp
+ * Author:       Connor White -> Aggie Robotics
+ * Created:      Thu Jun 21 2024
+ * Description:  Whooplib Template
+ *
+ * Contributions:
+ *   2775 Josh:
+ *      https://github.com/JacksonAreaRobotics/JAR-Template
+ *   Intel:
+ *      https://github.com/IntelRealSense/librealsense
+ *   PiLons:
+ *      http://thepilons.ca/wp-content/uploads/2018/10/Tracking.pdf
+ *   Andrew Walker:
+ *      https://github.com/AndrewWalker/Dubins-Curves/tree/master
+ *   Alex:
+ *      https://www.learncpp.com/
+ *
+ */
 #include "main.h"
 
 ////////////////////////////////////////////////////////////
