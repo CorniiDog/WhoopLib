@@ -134,7 +134,10 @@ So, just a run-down. Your main.cpp may contain something like:
 
 #### **VEXCode**
 
+#### `main.cpp`
+
 ```cpp
+// Code above...
 
 /*---------------------------------------------------------------------------*/
 /*                          Pre-Autonomous Functions                         */
@@ -200,7 +203,11 @@ int main() {
 
 #### **PROS**
 
+#### `main.cpp`
+
 ```cpp
+// Code above...
+
 /**
  * Runs initialization code. This occurs as soon as the program is started.
  *

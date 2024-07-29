@@ -16,8 +16,8 @@ WhoopOdomFusion odom_fusion(
     &odom_offset,                // Pointer to the odometry offset
     0.9,                         // Minimum confidence threshold to apply vision system to odometry
     fusionmode::fusion_gradual,  // The method of fusing
-    to_meters(50),               // If fusionmode is fusion_gradual, it is the maximum allowable lateral shift the vision camera can update in meters per second.
-    to_rad(500)                  // If fusionmode is fusion_gradual, it is the maximum allowable yaw rotational shift the vision camera can update in radians per second.
+    50_in,               // If fusionmode is fusion_gradual, it is the maximum allowable lateral shift the vision camera can update.
+    500_deg                  // If fusionmode is fusion_gradual, it is the maximum allowable yaw rotational shift the vision camera can update.
 );
 ```
 
@@ -34,7 +34,7 @@ There are multiple fusion modes:
 | ```vision_only```    | Only accept odometry from the vision system, ignoring wheel odometry     |
 | ```wheel_odom_only```    | Only accepts wheel odometry, ignoring vision odometry     |
 
-If ```fusionmode``` is set to ```fusion_gradual``` you can adjust the maximum amount of xy and yaw shift in meters/second and radians/second, hence the last two variables ```to_meters(50)``` and ```to_rad(500)```. The ```to_rad(500)``` pretty much means maximum rotational shift of ```500``` degrees/second (and then we convert to radians/second for the constructor). The ```to_meters(50)``` means maximum lateral shift of ```50``` inches/second (then converted to meters/second for the constructor).
+If ```fusionmode``` is set to ```fusion_gradual``` you can adjust the maximum amount of xy and yaw shift per second, hence the last two variables ```50_in``` and ```500_deg```.
 
 
 #### **If You Do Not Have a Vision Tesseract**

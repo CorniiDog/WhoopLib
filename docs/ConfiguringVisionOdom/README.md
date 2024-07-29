@@ -60,8 +60,8 @@ With this information, we will determine the necessary offsets of the camera fro
 ```cpp
 // Vision Offset of the Vision Tesseract from the Center of Robot
 RobotVisionOffset vision_offset(
-  to_meters(0.21), // The x offset in meters, (right-positive from the center of the robot).
-  to_meters(8.66); // The y offset in meters (forward-positive from the center of the robot).
+  0.21_in, // The x offset (right-positive from the center of the robot).
+  8.66_in; // The y offset (forward-positive from the center of the robot).
 );
 ```
 
@@ -105,8 +105,8 @@ JetsonCommander jetson_commander(
     &controller1,                      // The controller to send messages to upon error
     &buffer_system,                    // Pointer to the buffer system (will be managed by the buffer system)
     "C",                               // The subscribed stream name for keep-alive, shutdown, and reboot
-    60,                                // In seconds. When the V5 Brain shuts down or disconnects, the Jetson Nano will keep the program running for this time before it shuts off
-    2,                                 // How many seconds to wait before sending anoter keep alive message to Jetson (suggested 2)
+    60_sec,                                // In seconds. When the V5 Brain shuts down or disconnects, the Jetson Nano will keep the program running for this time before it shuts off
+    2_sec,                                 // How many seconds to wait before sending anoter keep alive message to Jetson (suggested 2)
     jetsonCommunication::disable_comms // If you don't have a Vision Tesseract on your robot, set to disable_comms
 );
 ```

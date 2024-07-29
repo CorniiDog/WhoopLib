@@ -124,7 +124,7 @@ Now we are ready for the nitty-gritty. It is time to setup the odometry unit. Th
 
 The following illustration shows the center of the odometry unit. The odom unit center is the virtual intercept of the perpendicular faces of the odometry trackers. The measurements is from the center of the odom unit to the designated tracker distances.
 
-The forward tracker is always offset right/left from the center of the odometry unit center, while the sideways tracker is always forward/backwards from the center of the odometry unit. The measurements are in **meters**. If you measured in inches, you can wrap it with ```to_meters(inches)``` and it would be converted to meters.
+The forward tracker is always offset right/left from the center of the odometry unit center, while the sideways tracker is always forward/backwards from the center of the odometry unit. 
 
 Based upon the following illustration above, with ```2.5189``` inch wheels, the forward tracker being offset to the right, and sideways tracker being offset back of the odometry unit:
 
@@ -134,10 +134,10 @@ Based upon the following illustration above, with ```2.5189``` inch wheels, the 
 
 ```cpp
 WhoopDriveOdomUnit odom_unit(
-    to_meters(1.51),   // The forward tracker distance, in meters, from the odom unit's center. (positive implies a shift to the right from the odom unit's center)
-    to_meters(2.5189), // Diameter of the forward tracker, in meters (e.g., 0.08255 for 3.25-inch wheels).
-    to_meters(-4.468), // The sideways tracker distance, in meters, from the odom unit's center (positive implies a shift forward from the odom unit center)
-    to_meters(2.5189), // Diameter of the sideways tracker, in meters (e.g., 0.08255 for 3.25-inch wheels).
+    1.51_in,   // The forward tracker distance from the odom unit's center. (positive implies a shift to the right from the odom unit's center)
+    2.5189_in, // Diameter of the forward tracker (e.g., 3.25_in for 3.25-inch wheels).
+    -4.468_in, // The sideways tracker distance from the odom unit's center (positive implies a shift forward from the odom unit center)
+    2.5189_in, // Diameter of the sideways tracker (e.g., 3.25_in for 3.25-inch wheels).
     &inertial_sensor,  // Pointer to the WhoopInertial sensor
     &forward_tracker,  // Pointer to the forward tracker, as a WhoopRotation sensor
     &sideways_tracker  // Pointer to the sideways tracker, as a WhoopRotation sensor
@@ -162,8 +162,8 @@ Based upon the image, the odometry offset would be:
 ```cpp
 WhoopDriveOdomOffset odom_offset(
   &odom_unit,      // Pointer to the odometry unit (will manage the odom unit)
-  to_meters(-0.6), // The x offset of the odom unit from the center of the robot (positive implies a shift right from the center of the robot).
-  to_meters(4.95)  // The y offset of the odom unit from the center of the robot (positive implies a shift forward from the center of the robot).
+  -0.6_in, // The x offset of the odom unit from the center of the robot (positive implies a shift right from the center of the robot).
+  4.95_in  // The y offset of the odom unit from the center of the robot (positive implies a shift forward from the center of the robot).
 );
 ```
 
@@ -183,11 +183,11 @@ For this, you assume that the right wheels is the forwards tracker.
 
 ```cpp
 WhoopDriveOdomUnit odom_unit(
-  to_meters(6.313),  // Distance between the center of the odom unit and the right wheels, in meters.
-  to_meters(3),      // Diameter of drivetrain wheels, in meters 
+  6.313_in,  // Distance between the center of the odom unit and the right wheels
+  3_in,      // Diameter of drivetrain wheels
   1.0/2.0,           // Gear Ratio of Drivetrain (If [motor is powering 32t] connected to [64t sharing shaft with drive wheel], it would be ratio = 32/64 = 1.0/2.0) 
-  to_meters(1.2),    // Sideways tracker distance from the center of the robot's rotation. (positive implies a shift forward from the drivetrain's center)
-  to_meters(2.5189), // Diameter of the sideways tracker, in meters (e.g., 0.08255 for 3.25-inch wheels).
+  1.2_in,    // Sideways tracker distance from the center of the robot's rotation. (positive implies a shift forward from the drivetrain's center)
+  2.5189_in, // Diameter of the sideways tracker (e.g., 3.25_in for 3.25-inch wheels).
   &inertial_sensor, 
   &sideways_tracker, 
   &left_motors, 
@@ -212,8 +212,8 @@ The black dot is the center of the odometry unit, while the purple dot is the ce
 
 WhoopDriveOdomOffset odom_offset(
   &odom_unit,      // Pointer to the odometry unit (will manage the odom unit)
-  to_meters(-0.6), // The x offset of the odom unit from the center of the robot (positive implies a shift right from the center of the robot).
-  to_meters(0)     // Zero as one-tracker odom has no y-offset from the center of the robot
+  -0.6_in, // The x offset of the odom unit from the center of the robot (positive implies a shift right from the center of the robot).
+  0_in     // Zero as one-tracker odom has no y-offset from the center of the robot
 );
 ```
 
@@ -233,8 +233,8 @@ If you are not using any trackers, this is very clear-cut.
 
 ```cpp
 WhoopDriveOdomUnit odom_unit(
-  to_meters(12.625), // Width of the drivetrain, in meters. Measured as the distance between the left wheels and right wheels
-  to_meters(3),      // Diameter of drivetrain wheels, in meters 
+  12.625_in, // Width of the drivetrain. Measured as the distance between the left wheels and right wheels
+  3_in,      // Diameter of drivetrain wheels
   1.0/2.0,           // Gear Ratio of Drivetrain (If [motor is powering 32t] connected to [64t sharing shaft with drive wheel], it would be ratio = 32/64 = 1.0/2.0) 
   &inertial_sensor, 
   &left_motors, 
@@ -254,8 +254,8 @@ And then configure offset
 ```cpp
 WhoopDriveOdomOffset odom_offset(
   &odom_unit,   // Pointer to the odometry unit (will manage the odom unit)
-  to_meters(0), // Zero offset as no tracker
-  to_meters(0)  // Zero offset as no tracker
+  0_in, // Zero offset as no tracker
+  0_in  // Zero offset as no tracker
 );
 ```
 
@@ -263,4 +263,432 @@ WhoopDriveOdomOffset odom_offset(
 
 <!-- tabs:end -->
 
+
+As a run-down, your code may look like the following:
+
+<!-- tabs:start -->
+
+#### **Configure With Two Trackers**
+
+<!-- tabs:start -->
+
+#### **VEXCode**
+
+#### `main.cpp`
+```cpp
+/*----------------------------------------------------------------------------*/
+/*                                                                            */
+/*    Module:       main.cpp                                                  */
+/*    Author:       Aggie Robotics                                            */
+/*    Created:      Thu Jun 21 2024                                           */
+/*    Description:  Whooplib Template                                         */
+/*                                                                            */
+/*----------------------------------------------------------------------------*/
+
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// ---- END VEXCODE CONFIGURED DEVICES ----
+
+#include "vex.h"
+#include "whooplib.h"
+
+using namespace vex;
+
+// A global instance of competition
+competition Competition;
+
+////////////////////////////////////////////////////////////
+/**
+ *    Globals
+ */
+////////////////////////////////////////////////////////////
+
+// Primary controller
+WhoopController controller1(joystickmode::joystickmode_tank, controllertype::controller_primary);
+
+// Left drive motors
+WhoopMotor l1(PORT12, cartridge::blue, reversed::no_reverse);
+WhoopMotor l2(PORT13, cartridge::blue, reversed::no_reverse);
+WhoopMotor l3(PORT14, cartridge::blue, reversed::no_reverse);
+WhoopMotor l4(PORT15, cartridge::blue, reversed::no_reverse);
+WhoopMotorGroup left_motors({&l1, &l2, &l3, &l4});
+
+// Right drive motors
+WhoopMotor r1(PORT1, cartridge::blue, reversed::yes_reverse);
+WhoopMotor r2(PORT2, cartridge::blue, reversed::yes_reverse);
+WhoopMotor r3(PORT3, cartridge::blue, reversed::yes_reverse);
+WhoopMotor r4(PORT4, cartridge::blue, reversed::yes_reverse);
+WhoopMotorGroup right_motors({&r1, &r2, &r3, &r4});
+
+// Sensors
+WhoopInertial inertial_sensor(PORT7);
+WhoopRotation forward_tracker(PORT6, reversed::no_reverse);
+WhoopRotation sideways_tracker(PORT9, reversed::no_reverse);
+
+////////////////////////////////////////////////////////////
+/**
+ *    Wheel Odometry Configuration
+ */
+////////////////////////////////////////////////////////////
+WhoopDriveOdomUnit odom_unit(
+    1.51_in,   // The forward tracker distance  from the odom unit's center. (positive implies a shift to the right from the odom unit's center)
+    2.5189_in, // Diameter of the forward tracker (e.g. 3.25_in for 3.25-inch wheels).
+    -4.468_in, // The sideways tracker distance  from the odom unit's center (positive implies a shift forward from the odom unit center)
+    2.5189_in, // Diameter of the sideways tracker (e.g. 3.25_in for 3.25-inch wheels).
+    &inertial_sensor,  // Pointer to the WhoopInertial sensor
+    &forward_tracker,  // Pointer to the forward tracker, as a WhoopRotation sensor
+    &sideways_tracker  // Pointer to the sideways tracker, as a WhoopRotation sensor
+);
+
+WhoopDriveOdomOffset odom_offset(
+    &odom_unit,      // Pointer to the odometry unit (will manage the odom unit)
+    -0.6_in, // The x offset of the odom unit from the center of the robot (positive implies a shift right from the center of the robot).
+    4.95_in  // The y offset of the odom unit from the center of the robot (positive implies a shift forward from the center of the robot).
+);
+
+//Rest of code...
+```
+
+#### **PROS**
+
+#### `main.cpp`
+```cpp
+#include "main.h"
+
+////////////////////////////////////////////////////////////
+/**
+ *    Globals
+ */
+////////////////////////////////////////////////////////////
+
+// Primary controller
+WhoopController controller1(joystickmode::joystickmode_tank, controllertype::controller_primary);
+
+// Left drive motors
+WhoopMotor l1(PORT12, cartridge::blue, reversed::no_reverse);
+WhoopMotor l2(PORT13, cartridge::blue, reversed::no_reverse);
+WhoopMotor l3(PORT14, cartridge::blue, reversed::no_reverse);
+WhoopMotor l4(PORT15, cartridge::blue, reversed::no_reverse);
+WhoopMotorGroup left_motors({&l1, &l2, &l3, &l4});
+
+// Right drive motors
+WhoopMotor r1(PORT1, cartridge::blue, reversed::yes_reverse);
+WhoopMotor r2(PORT2, cartridge::blue, reversed::yes_reverse);
+WhoopMotor r3(PORT3, cartridge::blue, reversed::yes_reverse);
+WhoopMotor r4(PORT4, cartridge::blue, reversed::yes_reverse);
+WhoopMotorGroup right_motors({&r1, &r2, &r3, &r4});
+
+// Sensors
+WhoopInertial inertial_sensor(PORT7);
+WhoopRotation forward_tracker(PORT6, reversed::no_reverse);
+WhoopRotation sideways_tracker(PORT9, reversed::no_reverse);
+
+////////////////////////////////////////////////////////////
+/**
+ *    Wheel Odometry Configuration
+ */
+////////////////////////////////////////////////////////////
+WhoopDriveOdomUnit odom_unit(
+    1.51_in,   // The forward tracker distance  from the odom unit's center. (positive implies a shift to the right from the odom unit's center)
+    2.5189_in, // Diameter of the forward tracker (e.g. 3.25_in for 3.25-inch wheels).
+    -4.468_in, // The sideways tracker distance  from the odom unit's center (positive implies a shift forward from the odom unit center)
+    2.5189_in, // Diameter of the sideways tracker (e.g. 3.25_in for 3.25-inch wheels).
+    &inertial_sensor,  // Pointer to the WhoopInertial sensor
+    &forward_tracker,  // Pointer to the forward tracker, as a WhoopRotation sensor
+    &sideways_tracker  // Pointer to the sideways tracker, as a WhoopRotation sensor
+);
+
+WhoopDriveOdomOffset odom_offset(
+    &odom_unit,      // Pointer to the odometry unit (will manage the odom unit)
+    -0.6_in, // The x offset of the odom unit from the center of the robot (positive implies a shift right from the center of the robot).
+    4.95_in  // The y offset of the odom unit from the center of the robot (positive implies a shift forward from the center of the robot).
+);
+
+//Rest of code...
+```
+
+<!-- tabs:end -->
+
+#### **Configure With One Tracker**
+
+<!-- tabs:start -->
+
+#### **VEXCode**
+
+#### `main.cpp`
+```cpp
+/*----------------------------------------------------------------------------*/
+/*                                                                            */
+/*    Module:       main.cpp                                                  */
+/*    Author:       Aggie Robotics                                            */
+/*    Created:      Thu Jun 21 2024                                           */
+/*    Description:  Whooplib Template                                         */
+/*                                                                            */
+/*----------------------------------------------------------------------------*/
+
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// ---- END VEXCODE CONFIGURED DEVICES ----
+
+#include "vex.h"
+#include "whooplib.h"
+
+using namespace vex;
+
+// A global instance of competition
+competition Competition;
+
+////////////////////////////////////////////////////////////
+/**
+ *    Globals
+ */
+////////////////////////////////////////////////////////////
+
+// Primary controller
+WhoopController controller1(joystickmode::joystickmode_tank, controllertype::controller_primary);
+
+// Left drive motors
+WhoopMotor l1(PORT12, cartridge::blue, reversed::no_reverse);
+WhoopMotor l2(PORT13, cartridge::blue, reversed::no_reverse);
+WhoopMotor l3(PORT14, cartridge::blue, reversed::no_reverse);
+WhoopMotor l4(PORT15, cartridge::blue, reversed::no_reverse);
+WhoopMotorGroup left_motors({&l1, &l2, &l3, &l4});
+
+// Right drive motors
+WhoopMotor r1(PORT1, cartridge::blue, reversed::yes_reverse);
+WhoopMotor r2(PORT2, cartridge::blue, reversed::yes_reverse);
+WhoopMotor r3(PORT3, cartridge::blue, reversed::yes_reverse);
+WhoopMotor r4(PORT4, cartridge::blue, reversed::yes_reverse);
+WhoopMotorGroup right_motors({&r1, &r2, &r3, &r4});
+
+// Sensors
+WhoopInertial inertial_sensor(PORT7);
+WhoopRotation sideways_tracker(PORT9, reversed::no_reverse);
+
+////////////////////////////////////////////////////////////
+/**
+ *    Wheel Odometry Configuration
+ */
+////////////////////////////////////////////////////////////
+WhoopDriveOdomUnit odom_unit(
+  6.313_in,  // Distance between the center of the odom unit and the right wheels .
+  3_in,      // Diameter of drivetrain wheels  
+  1.0/2.0,           // Gear Ratio of Drivetrain (If [motor is powering 32t] connected to [64t sharing shaft with drive wheel], it would be ratio = 32/64 = 1.0/2.0) 
+  1.2_in,    // Sideways tracker distance from the center of the robot's rotation. (positive implies a shift forward from the drivetrain's center)
+  2.5189_in, // Diameter of the sideways tracker  (e.g. 3.25_in for 3.25-inch wheels).
+  &inertial_sensor, 
+  &sideways_tracker, 
+  &left_motors, 
+  &right_motors
+);
+
+WhoopDriveOdomOffset odom_offset(
+  &odom_unit,      // Pointer to the odometry unit (will manage the odom unit)
+  -0.6_in, // The x offset of the odom unit from the center of the robot (positive implies a shift right from the center of the robot).
+  0_in     // Zero as one-tracker odom has no y-offset from the center of the robot
+);
+
+//Rest of code...
+```
+
+#### **PROS**
+
+#### `main.cpp`
+```cpp
+#include "main.h"
+
+////////////////////////////////////////////////////////////
+/**
+ *    Globals
+ */
+////////////////////////////////////////////////////////////
+
+// Primary controller
+WhoopController controller1(joystickmode::joystickmode_tank, controllertype::controller_primary);
+
+// Left drive motors
+WhoopMotor l1(PORT12, cartridge::blue, reversed::no_reverse);
+WhoopMotor l2(PORT13, cartridge::blue, reversed::no_reverse);
+WhoopMotor l3(PORT14, cartridge::blue, reversed::no_reverse);
+WhoopMotor l4(PORT15, cartridge::blue, reversed::no_reverse);
+WhoopMotorGroup left_motors({&l1, &l2, &l3, &l4});
+
+// Right drive motors
+WhoopMotor r1(PORT1, cartridge::blue, reversed::yes_reverse);
+WhoopMotor r2(PORT2, cartridge::blue, reversed::yes_reverse);
+WhoopMotor r3(PORT3, cartridge::blue, reversed::yes_reverse);
+WhoopMotor r4(PORT4, cartridge::blue, reversed::yes_reverse);
+WhoopMotorGroup right_motors({&r1, &r2, &r3, &r4});
+
+// Sensors
+WhoopInertial inertial_sensor(PORT7);
+WhoopRotation sideways_tracker(PORT9, reversed::no_reverse);
+
+////////////////////////////////////////////////////////////
+/**
+ *    Wheel Odometry Configuration
+ */
+////////////////////////////////////////////////////////////
+WhoopDriveOdomUnit odom_unit(
+  6.313_in,  // Distance between the center of the odom unit and the right wheels .
+  3_in,      // Diameter of drivetrain wheels  
+  1.0/2.0,           // Gear Ratio of Drivetrain (If [motor is powering 32t] connected to [64t sharing shaft with drive wheel], it would be ratio = 32/64 = 1.0/2.0) 
+  1.2_in,    // Sideways tracker distance from the center of the robot's rotation. (positive implies a shift forward from the drivetrain's center)
+  2.5189_in, // Diameter of the sideways tracker  (e.g. 3.25_in for 3.25-inch wheels).
+  &inertial_sensor, 
+  &sideways_tracker, 
+  &left_motors, 
+  &right_motors
+);
+
+WhoopDriveOdomOffset odom_offset(
+  &odom_unit,      // Pointer to the odometry unit (will manage the odom unit)
+  -0.6_in, // The x offset of the odom unit from the center of the robot (positive implies a shift right from the center of the robot).
+  0_in     // Zero as one-tracker odom has no y-offset from the center of the robot
+);
+
+//Rest of code...
+```
+
+
+<!-- tabs:end -->
+
+#### **Configure With No Tracker**
+
+<!-- tabs:start -->
+
+#### **VEXCode**
+
+#### `main.cpp`
+```cpp
+/*----------------------------------------------------------------------------*/
+/*                                                                            */
+/*    Module:       main.cpp                                                  */
+/*    Author:       Aggie Robotics                                            */
+/*    Created:      Thu Jun 21 2024                                           */
+/*    Description:  Whooplib Template                                         */
+/*                                                                            */
+/*----------------------------------------------------------------------------*/
+
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// ---- END VEXCODE CONFIGURED DEVICES ----
+
+#include "vex.h"
+#include "whooplib.h"
+
+using namespace vex;
+
+// A global instance of competition
+competition Competition;
+
+////////////////////////////////////////////////////////////
+/**
+ *    Globals
+ */
+////////////////////////////////////////////////////////////
+
+// Primary controller
+WhoopController controller1(joystickmode::joystickmode_tank, controllertype::controller_primary);
+
+// Left drive motors
+WhoopMotor l1(PORT12, cartridge::blue, reversed::no_reverse);
+WhoopMotor l2(PORT13, cartridge::blue, reversed::no_reverse);
+WhoopMotor l3(PORT14, cartridge::blue, reversed::no_reverse);
+WhoopMotor l4(PORT15, cartridge::blue, reversed::no_reverse);
+WhoopMotorGroup left_motors({&l1, &l2, &l3, &l4});
+
+// Right drive motors
+WhoopMotor r1(PORT1, cartridge::blue, reversed::yes_reverse);
+WhoopMotor r2(PORT2, cartridge::blue, reversed::yes_reverse);
+WhoopMotor r3(PORT3, cartridge::blue, reversed::yes_reverse);
+WhoopMotor r4(PORT4, cartridge::blue, reversed::yes_reverse);
+WhoopMotorGroup right_motors({&r1, &r2, &r3, &r4});
+
+// Sensors
+WhoopInertial inertial_sensor(PORT7);
+WhoopRotation sideways_tracker(PORT9, reversed::no_reverse);
+
+////////////////////////////////////////////////////////////
+/**
+ *    Wheel Odometry Configuration
+ */
+////////////////////////////////////////////////////////////
+WhoopDriveOdomUnit odom_unit(
+  12.625_in, // Width of the drivetrain . Measured as the distance between the left wheels and right wheels
+  3_in,      // Diameter of drivetrain wheels  
+  1.0/2.0,           // Gear Ratio of Drivetrain (If [motor is powering 32t] connected to [64t sharing shaft with drive wheel], it would be ratio = 32/64 = 1.0/2.0) 
+  &inertial_sensor, 
+  &left_motors, 
+  &right_motors
+);
+
+WhoopDriveOdomOffset odom_offset(
+  &odom_unit,   // Pointer to the odometry unit (will manage the odom unit)
+  0_in, // Zero offset as no tracker
+  0_in  // Zero offset as no tracker
+);
+
+//Rest of code...
+```
+
+#### **PROS**
+
+#### `main.cpp`
+```cpp
+#include "main.h"
+
+////////////////////////////////////////////////////////////
+/**
+ *    Globals
+ */
+////////////////////////////////////////////////////////////
+
+// Primary controller
+WhoopController controller1(joystickmode::joystickmode_tank, controllertype::controller_primary);
+
+// Left drive motors
+WhoopMotor l1(PORT12, cartridge::blue, reversed::no_reverse);
+WhoopMotor l2(PORT13, cartridge::blue, reversed::no_reverse);
+WhoopMotor l3(PORT14, cartridge::blue, reversed::no_reverse);
+WhoopMotor l4(PORT15, cartridge::blue, reversed::no_reverse);
+WhoopMotorGroup left_motors({&l1, &l2, &l3, &l4});
+
+// Right drive motors
+WhoopMotor r1(PORT1, cartridge::blue, reversed::yes_reverse);
+WhoopMotor r2(PORT2, cartridge::blue, reversed::yes_reverse);
+WhoopMotor r3(PORT3, cartridge::blue, reversed::yes_reverse);
+WhoopMotor r4(PORT4, cartridge::blue, reversed::yes_reverse);
+WhoopMotorGroup right_motors({&r1, &r2, &r3, &r4});
+
+// Sensors
+WhoopInertial inertial_sensor(PORT7);
+WhoopRotation sideways_tracker(PORT9, reversed::no_reverse);
+
+////////////////////////////////////////////////////////////
+/**
+ *    Wheel Odometry Configuration
+ */
+////////////////////////////////////////////////////////////
+WhoopDriveOdomUnit odom_unit(
+  12.625_in, // Width of the drivetrain . Measured as the distance between the left wheels and right wheels
+  3_in,      // Diameter of drivetrain wheels  
+  1.0/2.0,           // Gear Ratio of Drivetrain (If [motor is powering 32t] connected to [64t sharing shaft with drive wheel], it would be ratio = 32/64 = 1.0/2.0) 
+  &inertial_sensor, 
+  &left_motors, 
+  &right_motors
+);
+
+WhoopDriveOdomOffset odom_offset(
+  &odom_unit,   // Pointer to the odometry unit (will manage the odom unit)
+  0_in, // Zero offset as no tracker
+  0_in  // Zero offset as no tracker
+);
+
+//Rest of code...
+```
+
+
+<!-- tabs:end -->
+
+<!-- tabs:end -->
+
 Now you are ready to continue to the next step!
+

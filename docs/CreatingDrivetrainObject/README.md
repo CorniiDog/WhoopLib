@@ -29,24 +29,24 @@ If you want to tune your own custom-parameters, you can do so via the following:
 
 ```cpp
 PursuitParams pursuit_parameters(
-    to_meters(5),    // Radius of the turns, in meters
-    to_meters(5),    // Pure Pursuit look ahead distance, in meters
-    8.0,             // Pure pursuit forward max motor voltage (0.0, 12.0]
-    12.0,            // Pure pursuit turning max motor voltage (0.0, 12.0]
-    50.0,            // The maximum voltage change per second, as a slew rate (only applies speeding up)
-    to_meters(1.25), // Settle Distance. Exits when within this distance of target, in meters
-    to_rad(1),       // Settle Rotation. Exits when within this rotation of target, in radians
-    0.3,             // Minimum time to be considered settled, in seconds
-    0,               // Time after which to give up and move on, in seconds (set to 0 to disable)
-    14,              // Turning (kP) Proportional Tuning
-    0.1,             // Turning (kI) Integral Tuning
-    20,              // Turning (kD) Derivative Tuning
-    to_rad(15),      // The rotation distance (error), in radians, to activate turning_ki
-    55,              // Forward (kP) Proportional Tuning
-    0.01,            // Forward (kI) Integral Tuning
-    250,             // Forward (kD) Derivative Tuning
-    to_meters(2),    // The forward distance (error), in meters, to activate forward_ki
-    100              // The number of points when generating the path. More points mean higher detail of the path, but at a higher computational cost
+    5_in,    // Radius of the turns
+    5_in,    // Pure Pursuit look ahead distance
+    8.0_v,   // Pure pursuit forward max motor voltage (0.0, 12.0]
+    12.0_v,  // Pure pursuit turning max motor voltage (0.0, 12.0]
+    50.0_v,  // The maximum voltage change per second, as a slew rate (only applies speeding up)
+    1.25_in, // Settle Distance. Exits when within this distance of target
+    1_deg,   // Settle Rotation. Exits when within this rotation of target
+    0.3_sec, // Minimum time to be considered settled, in seconds
+    0_sec,   // Time after which to give up and move on, in seconds (set to 0 to disable)
+    14_kp,   // Turning (kP) Proportional Tuning
+    0.1_ki,  // Turning (kI) Integral Tuning
+    20_kd,   // Turning (kD) Derivative Tuning
+    15_deg,  // The rotation distance (error) to activate turning_ki
+    55_kp,   // Forward (kP) Proportional Tuning
+    0.01_ki, // Forward (kI) Integral Tuning
+    250_kd,  // Forward (kD) Derivative Tuning
+    2_m,     // The forward distance (error) to activate forward_ki
+    100      // The number of points when generating the path. More points mean higher detail of the path, but at a higher computational cost
 );
 
 ```
