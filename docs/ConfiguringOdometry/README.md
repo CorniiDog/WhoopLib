@@ -126,7 +126,8 @@ The respective linear units are:
 
 >**Note:** Linear units auto-convert to a `double` as meters
 >
-> i.e. `5.2_in` == `0.13208_m` == `132.08_mm`
+> i.e. `5.2_in` == `0.13208_m` == `132.08_mm`\
+> as 5.2 inches is the same as 0.13208 meters, or 132.08 millimeters
 
 The respective rotational units are:
 
@@ -137,7 +138,8 @@ The respective rotational units are:
 
 >**Note:** Rotational units auto-convert to a `double` as radians
 > 
-> i.e. `45_deg` == `0.785398_rad`
+> i.e. `45_deg` == `0.785398_rad`\
+> as 45 degrees is the same as π/4 radians, or 0.785398 radians
 
 Time units are:
 
@@ -149,6 +151,7 @@ Time units are:
 >**Note:** Time units auto-convert to a `double` as seconds
 >
 > i.e. `10_sec` == `10000_msec`
+> as 10 seconds is the same as 10,000 milliseconds
 
 ## Configuring Odometry
 
@@ -336,10 +339,6 @@ As a run-down, your code may look like the following:
 /*        https://www.learncpp.com/                                           */
 /*                                                                            */
 /*----------------------------------------------------------------------------*/
-
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// ---- END VEXCODE CONFIGURED DEVICES ----
-
 #include "vex.h"
 #include "whooplib.h"
 
@@ -507,10 +506,6 @@ WhoopDriveOdomOffset odom_offset(
 /*        https://www.learncpp.com/                                           */
 /*                                                                            */
 /*----------------------------------------------------------------------------*/
-
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// ---- END VEXCODE CONFIGURED DEVICES ----
-
 #include "vex.h"
 #include "whooplib.h"
 
@@ -681,10 +676,6 @@ WhoopDriveOdomOffset odom_offset(
 /*        https://www.learncpp.com/                                           */
 /*                                                                            */
 /*----------------------------------------------------------------------------*/
-
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// ---- END VEXCODE CONFIGURED DEVICES ----
-
 #include "vex.h"
 #include "whooplib.h"
 
