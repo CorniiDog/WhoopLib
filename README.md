@@ -25,9 +25,6 @@ The most advanced SLAM solution in VEX.
 >[!IMPORTANT] 
 > Slew rate is added, however the deftault parameters currently still need tuning
 
->[!NOTE]
-> WhoopLib Uses Google C++ Style
-
 ## Getting Started
 
 To start off with WhoopLib, head to: https://connoratmos.github.io/WhoopLib/
