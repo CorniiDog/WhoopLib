@@ -16,8 +16,8 @@ WhoopOdomFusion odom_fusion(
     &odom_offset,                // Pointer to the odometry offset
     0.9,                         // Minimum confidence threshold to apply vision system to odometry
     fusionmode::fusion_gradual,  // The method of fusing
-    50_in,               // If fusionmode is fusion_gradual, it is the maximum allowable lateral shift the vision camera can update.
-    500_deg                  // If fusionmode is fusion_gradual, it is the maximum allowable yaw rotational shift the vision camera can update.
+    50_in,                       // If fusionmode is fusion_gradual, it is the maximum allowable lateral shift the vision camera can update.
+    500_deg                      // If fusionmode is fusion_gradual, it is the maximum allowable yaw rotational shift the vision camera can update.
 );
 ```
 

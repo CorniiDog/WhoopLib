@@ -102,12 +102,12 @@ Next, we want to create a jetson commander so that the robot can communicate whe
 // This is essential to ensure that the nano starts its internal program, stop program, restarts program, 
 // and can be told to reboot or shutdown
 JetsonCommander jetson_commander(
-    &controller1,                      // The controller to send messages to upon error
-    &buffer_system,                    // Pointer to the buffer system (will be managed by the buffer system)
-    "C",                               // The subscribed stream name for keep-alive, shutdown, and reboot
-    60_sec,                                // In seconds. When the V5 Brain shuts down or disconnects, the Jetson Nano will keep the program running for this time before it shuts off
-    2_sec,                                 // How many seconds to wait before sending anoter keep alive message to Jetson (suggested 2)
-    jetsonCommunication::disable_comms // If you don't have a Vision Tesseract on your robot, set to disable_comms
+    &controller1,                       // The controller to send messages to upon error
+    &buffer_system,                     // Pointer to the buffer system (will be managed by the buffer system)
+    "C",                                // The subscribed stream name for keep-alive, shutdown, and reboot
+    60_sec,                             // In seconds. When the V5 Brain shuts down or disconnects, the Jetson Nano will keep the program running for this time before it shuts off
+    2_sec,                              // How many seconds to wait before sending anoter keep alive message to Jetson (suggested 2)
+    jetsonCommunication::disable_comms  // If you don't have a Vision Tesseract on your robot, set to disable_comms
 );
 ```
 
