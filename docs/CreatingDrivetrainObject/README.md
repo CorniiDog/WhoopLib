@@ -29,24 +29,24 @@ If you want to tune your own custom-parameters, you can do so via the following:
 
 ```cpp
 PursuitParams pursuit_parameters(
-    5_in,    // Radius of the turns
-    5_in,    // Pure Pursuit look ahead distance
-    8.0_v,   // Pure pursuit forward max motor voltage (0.0, 12.0]
-    12.0_v,  // Pure pursuit turning max motor voltage (0.0, 12.0]
-    50.0_v,  // The maximum voltage change per second, as a slew rate (only applies speeding up)
-    1.25_in, // Settle Distance. Exits when within this distance of target
-    1_deg,   // Settle Rotation. Exits when within this rotation of target
-    0.3_sec, // Minimum time to be considered settled, in seconds
-    0_sec,   // Time after which to give up and move on, in seconds (set to 0 to disable)
-    14_kp,   // Turning (kP) Proportional Tuning
-    0.1_ki,  // Turning (kI) Integral Tuning
-    20_kd,   // Turning (kD) Derivative Tuning
-    15_deg,  // The rotation distance (error) to activate turning_ki
-    55_kp,   // Forward (kP) Proportional Tuning
-    0.01_ki, // Forward (kI) Integral Tuning
-    250_kd,  // Forward (kD) Derivative Tuning
-    2_m,     // The forward distance (error) to activate forward_ki
-    100      // The number of points when generating the path. More points mean higher detail of the path, but at a higher computational cost
+    5_in,       // Radius of the turns
+    5_in,       // Pure Pursuit look ahead distance
+    8.0_volts,      // Pure pursuit forward max motor voltage (0.0, 12.0]
+    12.0_volts,     // Pure pursuit turning max motor voltage (0.0, 12.0]
+    50.0_volts,     // The maximum voltage change per second, as a slew rate (only applies speeding up)
+    1.25_in,    // Settle Distance. Exits when within this distance of target
+    1_deg,      // Settle Rotation. Exits when within this rotation of target
+    0.3_sec,    // Minimum time to be considered settled, in seconds
+    0_sec,      // Time after which to give up and move on, in seconds (set to 0 to disable)
+    14_kp,      // Turning (kP) Proportional Tuning
+    0.1_ki,     // Turning (kI) Integral Tuning
+    20_kd,      // Turning (kD) Derivative Tuning
+    15_deg,     // The rotation distance (error) to activate turning_ki
+    55_kp,      // Forward (kP) Proportional Tuning
+    0.01_ki,    // Forward (kI) Integral Tuning
+    250_kd,     // Forward (kD) Derivative Tuning
+    2_m,        // The forward distance (error) to activate forward_ki
+    100_points  // The number of points when generating the path. More points mean higher detail of the path, but at a higher computational cost
 );
 
 ```
@@ -57,10 +57,11 @@ WhoopLib has misc units which are:
 
 | Units | Description |
 | --- | --- |
-| `_v` | Volts |
+| `_volts` | Volts |
 | `_kp` | PID kP |
 | `_ki` | PID kI |
 | `_kd` | PID kD |
+| `_points` | Points |
 
 The WhoopLib uses the entirety of PID for turning and pure pursuit forward motion. This means that the robots movements, if configured correctly, are extremely precise to roughly ±```1.25``` inches and ±```1``` degrees for the pure pursuit's end-position. The robot uses Dubins-Curves to generate the sub-paths. Therefore, the robot simultaneously acts as a car, which is why there is a variable for the radius of the turns. Additionally, the pure pursuit look ahead distance is how far to look ahead in the path. The number of points is how many points when generating a path. Default is ```100```.
 
