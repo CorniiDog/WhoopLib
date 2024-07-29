@@ -62,10 +62,12 @@ WhoopMotorGroup right_motors({&r1, &r2, &r3, &r4});
 PORT1 is well... Port 1 on the V5 Brain. You can assume the rest for ports 1 through 21.
 
 > [!NOTE]
+> **PROS ONLY**
+>
 > Wait... `PORT1` for PROS too?
 >
 > Yes. WhoopLib is an attempt that adds both PROS and VEXCode functionality into one cohesive system, so WhoopLib adds the VEXCode `PORT1`-`PORT21` enums.
-> However, you can still use default PROS parameters if you are used to such conventions (i.e. for port `1` on the V5 Brain):
+> However, you can still use default PROS (Not in VEXCode) parameters if you are used to such conventions (i.e. for port `1` on the V5 Brain):
 > ```cpp
 > WhoopMotor my_motor(1, cartridge::blue);
 > ```
