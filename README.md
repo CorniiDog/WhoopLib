@@ -88,6 +88,7 @@ Distributed under the [MIT](https://choosealicense.com/licenses/mit/) License.
 
 Connor White - connor.sw.personal@gmail.com
 
+
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [forks-shield]: https://img.shields.io/github/forks/ConnorAtmos/WhoopLib.svg?style=for-the-badge
