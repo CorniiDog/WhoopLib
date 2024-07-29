@@ -146,7 +146,7 @@ Time units are:
 
 >**Note:** Time units auto-convert to a `double` as seconds
 >
-> i.e. `10_sec` == `10000_msec`
+> i.e. `10_sec` == `10000_msec`\
 > as 10 seconds is the same as 10,000 milliseconds
 
 ## Configuring Odometry
