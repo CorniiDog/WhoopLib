@@ -22,7 +22,9 @@ The most advanced SLAM solution in VEX.
 
 **With both PROS and VEXCode support**
 
->**Heads up:** Slew rate is added. That does mean I would need to tune the default pure pursuit parameters to work for most robot types.
+>[!IMPORTANT] Slew rate is added. That does mean I would need to tune the default pure pursuit parameters to work for most robot types.
+
+>[!NOTE] WhoopLib Uses Google C++ Style
 
 ## Getting Started
 
