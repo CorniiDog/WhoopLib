@@ -63,15 +63,11 @@ PORT1 is well... Port 1 on the V5 Brain. You can assume the rest for ports 1 thr
 
 Most of this is self-explanatory. However, just for the sake of it:
 
-Gear Setting Options:
-
 | ```cartridge```     | Definition | 
 |----------|:--------:|
 | ```blue```    | Blue cartridge (600 RPM)     |
 | ```green```    | Green cartridge (200 RPM)    |
 | ```red```    | Red cartridge (100 RPM)    |
-
-Reverse options
 
 | ```reversed```     | Definition | 
 |----------|:--------:|
