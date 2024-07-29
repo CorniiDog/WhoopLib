@@ -104,7 +104,7 @@ Add the following to your ```usercontrol``` function in VEXCode, or `opcontrol` 
 #### **VEXCode**
 
 ```cpp
-void usercontrol(void) {
+void usercontrol() {
   robot_drivetrain.set_state(drivetrainState::mode_usercontrol);
 
   while (1) {

@@ -92,7 +92,7 @@ void initialize();
 #### **VEXCode**
 
 ```cpp
-void pre_auton(void)
+void pre_auton()
 {
 
   // Initializing Robot Configuration. DO NOT REMOVE!
