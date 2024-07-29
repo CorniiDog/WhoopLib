@@ -15,10 +15,9 @@ The most advanced SLAM solution in VEX.
 
 #### **Heads up:** Slew rate is added. That does mean I would need to tune the default pure pursuit parameters to work for most robot types.
 
-![GitHub Release](https://img.shields.io/github/v/release/ConnorAtmos/WhoopLib?style=for-the-badge)
+![GitHub Release](https://img.shields.io/github/v/release/ConnorAtmos/WhoopLib?style=for-the-badge&color=%23500)
 ![GitHub forks](https://img.shields.io/github/forks/ConnorAtmos/WhoopLib?style=for-the-badge&color=%23500)
 ![GitHub Repo stars](https://img.shields.io/github/stars/ConnorAtmos/WhoopLib?style=for-the-badge&color=%23500)
-![Github Issues](!https://img.shields.io/github/issues/ConnorAtmos/WhoopLib?style=for-the-badge)
 [![LinkedIn][linkedin-shield]][linkedin-url]
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
