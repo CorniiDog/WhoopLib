@@ -633,13 +633,13 @@ Note the `1.51_in` that indicates inches. This is an automatic formatting scheme
 > For example, using the New 2.75" wheels: ![IMG](../images/275NewTiny.png)
 >```cpp
 >WhoopDriveOdomUnit odom_unit(
->    1.51_in,           // The forward tracker distance from the odom unit's center. (positive implies a shift to the right from the odom unit's center)
->    Omniwheel::NEW_275,         // Diameter of the forward tracker (e.g., 3.25_in for 3.25-inch wheels).
->    -4.468_in,         // The sideways tracker distance from the odom unit's center (positive implies a shift forward from the odom unit center)
->    Omniwheel::NEW_275,         // Diameter of the sideways tracker (e.g., 3.25_in for 3.25-inch wheels).
->    &inertial_sensor,  // Pointer to the WhoopInertial sensor
->    &forward_tracker,  // Pointer to the forward tracker, as a WhoopRotation sensor
->    &sideways_tracker  // Pointer to the sideways tracker, as a WhoopRotation sensor
+>    1.51_in,             // The forward tracker distance from the odom unit's center. (positive implies a shift to the right from the odom unit's center)
+>    Omniwheel::NEW_275,  // Diameter of the forward tracker (e.g., 3.25_in for 3.25-inch wheels).
+>    -4.468_in,           // The sideways tracker distance from the odom unit's center (positive implies a shift forward from the odom unit center)
+>    Omniwheel::NEW_275,  // Diameter of the sideways tracker (e.g., 3.25_in for 3.25-inch wheels).
+>    &inertial_sensor,    // Pointer to the WhoopInertial sensor
+>    &forward_tracker,    // Pointer to the forward tracker, as a WhoopRotation sensor
+>    &sideways_tracker    // Pointer to the sideways tracker, as a WhoopRotation sensor
 >);
 >```
 >
@@ -682,7 +682,39 @@ WhoopDriveOdomOffset odom_offset(
 
 <!-- tabs:end -->
 
-NOTE: If your Odom Unit's Center IS the center of the robot, set to ```0``` and ```0```.
+> [!NOTE]
+> If your Odom Unit's Center IS the center of the robot, set to ```0``` and ```0```.
+
+> [!NOTE]
+> **For advanced users:**
+> With respect to the note above, there is a way such that you can have your
+> odometry offset be `0`,`0` and have your tracking wheels be anywhere on the robot.
+> From the document [Introduction to Position Tracking](http://thepilons.ca/wp-content/uploads/2018/10/Tracking.pdf) by 5225A πlons, if you set the center of your odometry unit to the center of
+> the robot, you can simply use the forward and sideways tracker positions, completely omitting the other offset requirement and the math behind the scenes checks out to work this way too.
+>
+>![Image](../images/WiscoTwoTracker.png)\
+> [Image Source: WISCO](https://youtu.be/jaEG50WKzn0?si=xDh-b30m1M8BBUix&t=218)
+>
+> ```cpp
+>WhoopDriveOdomUnit odom_unit(
+>    -4.71_in,           // The forward tracker distance from the odom unit's center. (positive implies a shift to the right from the odom unit's center)
+>    2.5189_in,         // Diameter of the forward tracker (e.g., 3.25_in for 3.25-inch wheels).
+>    -5.62,             // The sideways tracker distance from the odom unit's center (positive implies a shift forward from the odom unit center)
+>    2.5189_in,         // Diameter of the sideways tracker (e.g., 3.25_in for 3.25-inch wheels).
+>    &inertial_sensor,  // Pointer to the WhoopInertial sensor
+>    &forward_tracker,  // Pointer to the forward tracker, as a WhoopRotation sensor
+>    &sideways_tracker  // Pointer to the sideways tracker, as a WhoopRotation sensor
+>);
+>```
+>And as for the offsets:
+>```cpp
+>WhoopDriveOdomOffset odom_offset(
+>  &odom_unit,  // Pointer to the odometry unit (will manage the odom unit)
+>  0.0_in,     // The x offset of the odom unit from the center of the robot (positive implies a shift right from the center of the robot).
+>  0.0_in      // The y offset of the odom unit from the center of the robot (positive implies a shift forward from the center of the robot).
+>);
+>```
+
 
 #### **Configure With One Tracker**
 
@@ -716,10 +748,10 @@ WhoopDriveOdomUnit odom_unit(
 > For example, using the New 2.75" wheel for the sideways tracker: ![IMG](../images/275NewTiny.png)
 >```cpp
 >WhoopDriveOdomUnit odom_unit(
->  6.313_in,   // Distance between the center of the odom unit and the right wheels
->  3_in,       // Diameter of drivetrain wheels
->  1.0/2.0,    // Gear Ratio of Drivetrain (If [motor is powering 32t] connected to [64t sharing shaft with drive wheel], it would be ratio = 32/64 = 1.0/2.0) 
->  1.2_in,     // Sideways tracker distance from the center of the robot's rotation. (positive implies a shift forward from the drivetrain's center)
+>  6.313_in,            // Distance between the center of the odom unit and the right wheels
+>  3_in,                // Diameter of drivetrain wheels
+>  1.0/2.0,             // Gear Ratio of Drivetrain (If [motor is powering 32t] connected to [64t sharing shaft with drive wheel], it would be ratio = 32/64 = 1.0/2.0) 
+>  1.2_in,              // Sideways tracker distance from the center of the robot's rotation. (positive implies a shift forward from the drivetrain's center)
 >  Omniwheel::NEW_275,  // Diameter of the sideways tracker (e.g., 3.25_in for 3.25-inch wheels).
 >  &inertial_sensor, 
 >  &sideways_tracker, 
@@ -744,7 +776,6 @@ WhoopDriveOdomUnit odom_unit(
 >|Half-Cut New 4” |3.995 | `Omniwheel::NEW_4_HALF`|![IMG](../images/4NewHalf.png)|
 >|Half-Cut Old 4” |4.175 | `Omniwheel::OLD_4_HALF`|![IMG](../images/4OldHalf.png)|
 
-
 Next is configuring the offsets. Since the forward/backwards location for the wheels is the same as the center of the robot, the forwards/backwards offset would be ```0```.
 
 ![Image](../images/OneWheelOdomOffsets.png)
@@ -765,6 +796,38 @@ WhoopDriveOdomOffset odom_offset(
 ```
 
 <!-- tabs:end -->
+
+> [!NOTE]
+> **For advanced users:**
+> With respect to the note above, there is a way such that you can have your
+> odometry offset be `0`,`0` and have your tracking wheels be anywhere on the robot.
+> From the document [Introduction to Position Tracking](http://thepilons.ca/wp-content/uploads/2018/10/Tracking.pdf) by 5225A πlons, if you set the center of your odometry unit to the center of
+> the robot, you can simply use the sideways tracker position, completely omitting the other offset requirement and the math behind the scenes checks out to work this way too.
+>
+>![Image](../images/WiscoOneTracker.png)\
+> [Image Source: WISCO](https://youtu.be/jaEG50WKzn0?si=xDh-b30m1M8BBUix&t=218)
+>
+> ```cpp
+>WhoopDriveOdomUnit odom_unit(
+>  7.42_in,   // Distance between the center of the odom unit and the right wheels
+>  3_in,       // Diameter of drivetrain wheels
+>  1.0/2.0,    // Gear Ratio of Drivetrain (If [motor is powering 32t] connected to [64t sharing shaft with drive wheel], it would be ratio = 32/64 = 1.0/2.0) 
+>  1.2_in,     // Sideways tracker distance from the center of the robot's rotation. (positive implies a shift forward from the drivetrain's center)
+>  2.5189_in,  // Diameter of the sideways tracker (e.g., 3.25_in for 3.25-inch wheels).
+>  &inertial_sensor, 
+>  &sideways_tracker, 
+>  &left_motors, 
+>  &right_motors
+>);
+>```
+>And as for the offsets:
+>```cpp
+>WhoopDriveOdomOffset odom_offset(
+>  &odom_unit,  // Pointer to the odometry unit (will manage the odom unit)
+>  0.0_in,     // The x offset of the odom unit from the center of the robot (positive implies a shift right from the center of the robot).
+>  0.0_in      // The y offset of the odom unit from the center of the robot (positive implies a shift forward from the center of the robot).
+>);
+>```
 
 
 #### **Configure With No Tracker**
