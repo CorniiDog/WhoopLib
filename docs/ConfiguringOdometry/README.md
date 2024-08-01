@@ -204,6 +204,38 @@ WhoopDriveOdomUnit odom_unit(
 
 Note the `1.51_in` that indicates inches. This is an automatic formatting scheme in C++ in WhoopLib that auto-converts the units to the respective standardizes units (meters and radians).
 
+>[!NOTE]
+>There are also pre-set omni-wheel dimensions that you can use in WhoopLib, as tribute to [LemLib](https://lemlib.readthedocs.io/en/v0.5.0/tutorials/2_configuration.html#wheel-diameter)
+>
+> For example, using the New 2.75" wheels: ![IMG](../images/275NewTiny.png)
+>```cpp
+>WhoopDriveOdomUnit odom_unit(
+>    1.51_in,           // The forward tracker distance from the odom unit's center. (positive implies a shift to the right from the odom unit's center)
+>    Omniwheel::NEW_275,         // Diameter of the forward tracker (e.g., 3.25_in for 3.25-inch wheels).
+>    -4.468_in,         // The sideways tracker distance from the odom unit's center (positive implies a shift forward from the odom unit center)
+>    Omniwheel::NEW_275,         // Diameter of the sideways tracker (e.g., 3.25_in for 3.25-inch wheels).
+>    &inertial_sensor,  // Pointer to the WhoopInertial sensor
+>    &forward_tracker,  // Pointer to the forward tracker, as a WhoopRotation sensor
+>    &sideways_tracker  // Pointer to the sideways tracker, as a WhoopRotation sensor
+>);
+>```
+>
+>| Wheel Type | Actual Size | Constant | Image |
+>| --- | --- | --- | --- |
+>|New 2”|2.125|`Omniwheel::NEW_2`|![IMG](../images/2New.png)|
+>|New 2.75”|2.75|`Omniwheel::NEW_275`|![IMG](../images/275New.png)|
+>|Old 2.75”|2.75|`Omniwheel::OLD_275`|![IMG](../images/275Old.png)|
+>|Half-Cut New 2.75”|2.744|`Omniwheel::NEW_275_HALF`|![IMG](../images/275NewHalf.png)|
+>|Half-Cut Old 2.75”|2.744|`Omniwheel::NEW_275_HALF`|![IMG](../images/275OldHalf.png)|
+>|New 3.25”|3.25|`Omniwheel::NEW_325`|![IMG](../images/325New.png)|
+>|Old 3.25” |3.25 | `Omniwheel::OLD_325`|![IMG](../images/325Old.png)|
+>|Half-Cut New 3.25” |3.246 | `Omniwheel::NEW_325_HALF`|![IMG](../images/325NewHalf.png)|
+>|Half-Cut Old 3.25” |3.246 | `Omniwheel::OLD_325_HALF`|![IMG](../images/325OldHalf.png)|
+>|New 4” |4.00 | `Omniwheel::NEW_4`|![IMG](../images/4New.png)|
+>|Old 4” |4.18 | `Omniwheel::OLD_4`|![IMG](../images/4Old.png)|
+>|Half-Cut New 4” |3.995 | `Omniwheel::NEW_4_HALF`|![IMG](../images/4NewHalf.png)|
+>|Half-Cut Old 4” |4.175 | `Omniwheel::OLD_4_HALF`|![IMG](../images/4OldHalf.png)|
+
 
 Next is to configure an offset of the odometry unit's center to the center of the robot:
 
@@ -254,6 +286,38 @@ WhoopDriveOdomUnit odom_unit(
 ```
 
 <!-- tabs:end -->
+
+>[!NOTE]
+>There are also pre-set omni-wheel dimensions that you can use in WhoopLib, as tribute to [LemLib](https://lemlib.readthedocs.io/en/v0.5.0/tutorials/2_configuration.html#wheel-diameter)
+>
+> For example, using the New 2.75" wheels: ![IMG](../images/275NewTiny.png)
+>```cpp
+>WhoopDriveOdomUnit odom_unit(
+>    1.51_in,           // The forward tracker distance from the odom unit's center. (positive implies a shift to the right from the odom unit's center)
+>    Omniwheel::NEW_275,         // Diameter of the forward tracker (e.g., 3.25_in for 3.25-inch wheels).
+>    -4.468_in,         // The sideways tracker distance from the odom unit's center (positive implies a shift forward from the odom unit center)
+>    Omniwheel::NEW_275,         // Diameter of the sideways tracker (e.g., 3.25_in for 3.25-inch wheels).
+>    &inertial_sensor,  // Pointer to the WhoopInertial sensor
+>    &forward_tracker,  // Pointer to the forward tracker, as a WhoopRotation sensor
+>    &sideways_tracker  // Pointer to the sideways tracker, as a WhoopRotation sensor
+>);
+>```
+>
+>| Wheel Type | Actual Size | Constant | Image |
+>| --- | --- | --- | --- |
+>|New 2”|2.125|`Omniwheel::NEW_2`|![IMG](../images/2New.png)|
+>|New 2.75”|2.75|`Omniwheel::NEW_275`|![IMG](../images/275New.png)|
+>|Old 2.75”|2.75|`Omniwheel::OLD_275`|![IMG](../images/275Old.png)|
+>|Half-Cut New 2.75”|2.744|`Omniwheel::NEW_275_HALF`|![IMG](../images/275NewHalf.png)|
+>|Half-Cut Old 2.75”|2.744|`Omniwheel::NEW_275_HALF`|![IMG](../images/275OldHalf.png)|
+>|New 3.25”|3.25|`Omniwheel::NEW_325`|![IMG](../images/325New.png)|
+>|Old 3.25” |3.25 | `Omniwheel::OLD_325`|![IMG](../images/325Old.png)|
+>|Half-Cut New 3.25” |3.246 | `Omniwheel::NEW_325_HALF`|![IMG](../images/325NewHalf.png)|
+>|Half-Cut Old 3.25” |3.246 | `Omniwheel::OLD_325_HALF`|![IMG](../images/325OldHalf.png)|
+>|New 4” |4.00 | `Omniwheel::NEW_4`|![IMG](../images/4New.png)|
+>|Old 4” |4.18 | `Omniwheel::OLD_4`|![IMG](../images/4Old.png)|
+>|Half-Cut New 4” |3.995 | `Omniwheel::NEW_4_HALF`|![IMG](../images/4NewHalf.png)|
+>|Half-Cut Old 4” |4.175 | `Omniwheel::OLD_4_HALF`|![IMG](../images/4OldHalf.png)|
 
 
 Next is configuring the offsets. Since the forward/backwards location for the wheels is the same as the center of the robot, the forwards/backwards offset would be ```0```.

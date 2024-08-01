@@ -128,3 +128,13 @@ If we move the robot to ```(24, 43)``` with a yaw of ```-130```, the position of
 ![Image](../images/OdomUnitsExample.png)
 
 You can see that the robot moved counter-clockwise. Since the drivetrain object is configured to be clockwise-positive, that is why the yaw is negative.
+
+> [!NOTE]
+> **For advanced users:**
+> WhoopLib uses Arc-Based Odometry.
+>
+> You can experiment and understand how the odometry works fundamentally in a Google Colab simulation here that runs the same odometry algorithm, translated to python, for WhoopLib: [Link](https://colab.research.google.com/drive/1I8B1reBHYpIm5ouvHNZfJpyALnaH1iP1?usp=sharing#scrollTo=Fkxq6NiFp4v2)
+>
+> **Keep in mind that this simulation uses `m_rad_ccw`, _different than what was discussed above_, as `m_rad_ccw` is the standardized units for the WhoopLib back-end.**
+>
+> ![IMAGE](../images/trajectory.gif)
