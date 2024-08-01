@@ -686,7 +686,7 @@ WhoopDriveOdomOffset odom_offset(
 > If your Odom Unit's Center IS the center of the robot, set to ```0``` and ```0```.
 
 > [!NOTE]
-> **For advanced users:**
+> **For advanced users (An alternative configuration):**
 > With respect to the note above, there is a way such that you can have your
 > odometry offset be `0`,`0` and have your tracking wheels be anywhere on the robot.
 > From the document [Introduction to Position Tracking](http://thepilons.ca/wp-content/uploads/2018/10/Tracking.pdf) by 5225A πlons, if you set the center of your odometry unit to the center of
@@ -798,7 +798,7 @@ WhoopDriveOdomOffset odom_offset(
 <!-- tabs:end -->
 
 > [!NOTE]
-> **For advanced users:**
+> **For advanced users (An alternative configuration):**
 > With respect to the note above, there is a way such that you can have your
 > odometry offset be `0`,`0` and have your tracking wheels be anywhere on the robot.
 > From the document [Introduction to Position Tracking](http://thepilons.ca/wp-content/uploads/2018/10/Tracking.pdf) by 5225A πlons, if you set the center of your odometry unit to the center of
