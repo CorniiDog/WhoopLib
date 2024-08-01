@@ -18,6 +18,86 @@ Before anything, we need to configure the controller we want to use alongside th
 WhoopController controller1(joystickmode::joystickmode_tank, controllertype::controller_primary);
 ```
 
+#### **Applied: PROS**
+
+#### `main.cpp`
+
+```cpp
+/**
+ * Module:       main.cpp
+ * Author:       Connor White -> Aggie Robotics
+ * Created:      Thu Jun 21 2024
+ * Description:  Whooplib Template
+ *
+ * Contributions:
+ *   2775 Josh:
+ *      https://github.com/JacksonAreaRobotics/JAR-Template
+ *   Intel:
+ *      https://github.com/IntelRealSense/librealsense
+ *   PiLons:
+ *      http://thepilons.ca/wp-content/uploads/2018/10/Tracking.pdf
+ *   Andrew Walker:
+ *      https://github.com/AndrewWalker/Dubins-Curves/tree/master
+ *   Alex:
+ *      https://www.learncpp.com/
+ *
+ */
+#include "main.h"
+
+////////////////////////////////////////////////////////////
+/**
+ *    Globals
+ */
+////////////////////////////////////////////////////////////
+
+// Primary controller
+WhoopController controller1(joystickmode::joystickmode_split_arcade, controllertype::controller_primary);
+//...
+```
+
+#### **Applied: VEXCode**
+
+#### `main.cpp`
+
+```cpp
+/*----------------------------------------------------------------------------*/
+/*                                                                            */
+/*    Module:       main.cpp                                                  */
+/*    Author:       Connor White -> Aggie Robotics                            */
+/*    Created:      Thu Jun 21 2024                                           */
+/*    Description:  Whooplib Template                                         */
+/*                                                                            */
+/*    Contributions:                                                          */
+/*      2775 Josh:                                                            */
+/*        https://github.com/JacksonAreaRobotics/JAR-Template                 */
+/*      Intel:                                                                */
+/*        https://github.com/IntelRealSense/librealsense                      */
+/*      PiLons:                                                               */
+/*        http://thepilons.ca/wp-content/uploads/2018/10/Tracking.pdf         */
+/*      Andrew Walker:                                                        */
+/*        https://github.com/AndrewWalker/Dubins-Curves/tree/master           */
+/*      Alex:                                                                 */
+/*        https://www.learncpp.com/                                           */
+/*                                                                            */
+/*----------------------------------------------------------------------------*/
+#include "vex.h"
+#include "whooplib.h"
+
+using namespace vex;
+
+// A global instance of competition
+competition Competition;
+
+////////////////////////////////////////////////////////////
+/**
+ *    Globals
+ */
+////////////////////////////////////////////////////////////
+
+// Primary controller
+WhoopController controller1(joystickmode::joystickmode_split_arcade, controllertype::controller_primary);
+//..
+```
 
 <!-- tabs:end -->
 
@@ -42,18 +122,127 @@ Next step is configuring the motors and drive groups using WhoopMotors
 
 ```cpp
 // Left drive motors
-WhoopMotor l1(PORT12, cartridge::blue, reversed::no_reverse);
-WhoopMotor l2(PORT13, cartridge::blue, reversed::no_reverse);
-WhoopMotor l3(PORT14, cartridge::blue, reversed::no_reverse);
-WhoopMotor l4(PORT15, cartridge::blue, reversed::no_reverse);
+WhoopMotor l1(PORT12, cartridge::blue, reversed::yes_reverse);
+WhoopMotor l2(PORT13, cartridge::blue, reversed::yes_reverse);
+WhoopMotor l3(PORT14, cartridge::blue, reversed::yes_reverse);
+WhoopMotor l4(PORT15, cartridge::blue, reversed::yes_reverse);
 WhoopMotorGroup left_motors({&l1, &l2, &l3, &l4});
 
 // Right drive motors
-WhoopMotor r1(PORT1, cartridge::blue, reversed::yes_reverse);
-WhoopMotor r2(PORT2, cartridge::blue, reversed::yes_reverse);
-WhoopMotor r3(PORT3, cartridge::blue, reversed::yes_reverse);
-WhoopMotor r4(PORT4, cartridge::blue, reversed::yes_reverse);
+WhoopMotor r1(PORT1, cartridge::blue, reversed::no_reverse);
+WhoopMotor r2(PORT2, cartridge::blue, reversed::no_reverse);
+WhoopMotor r3(PORT3, cartridge::blue, reversed::no_reverse);
+WhoopMotor r4(PORT4, cartridge::blue, reversed::no_reverse);
 WhoopMotorGroup right_motors({&r1, &r2, &r3, &r4});
+```
+
+#### **Applied: PROS**
+
+#### `main.cpp`
+
+```cpp
+/**
+ * Module:       main.cpp
+ * Author:       Connor White -> Aggie Robotics
+ * Created:      Thu Jun 21 2024
+ * Description:  Whooplib Template
+ *
+ * Contributions:
+ *   2775 Josh:
+ *      https://github.com/JacksonAreaRobotics/JAR-Template
+ *   Intel:
+ *      https://github.com/IntelRealSense/librealsense
+ *   PiLons:
+ *      http://thepilons.ca/wp-content/uploads/2018/10/Tracking.pdf
+ *   Andrew Walker:
+ *      https://github.com/AndrewWalker/Dubins-Curves/tree/master
+ *   Alex:
+ *      https://www.learncpp.com/
+ *
+ */
+#include "main.h"
+
+////////////////////////////////////////////////////////////
+/**
+ *    Globals
+ */
+////////////////////////////////////////////////////////////
+
+// Primary controller
+WhoopController controller1(joystickmode::joystickmode_split_arcade, controllertype::controller_primary);
+
+// Left drive motors
+WhoopMotor l1(PORT12, cartridge::blue, reversed::yes_reverse);
+WhoopMotor l2(PORT13, cartridge::blue, reversed::yes_reverse);
+WhoopMotor l3(PORT14, cartridge::blue, reversed::yes_reverse);
+WhoopMotor l4(PORT15, cartridge::blue, reversed::yes_reverse);
+WhoopMotorGroup left_motors({&l1, &l2, &l3, &l4});
+
+// Right drive motors
+WhoopMotor r1(PORT1, cartridge::blue, reversed::no_reverse);
+WhoopMotor r2(PORT2, cartridge::blue, reversed::no_reverse);
+WhoopMotor r3(PORT3, cartridge::blue, reversed::no_reverse);
+WhoopMotor r4(PORT4, cartridge::blue, reversed::no_reverse);
+WhoopMotorGroup right_motors({&r1, &r2, &r3, &r4});
+//...
+```
+
+#### **Applied: VEXCode**
+
+#### `main.cpp`
+
+```cpp
+/*----------------------------------------------------------------------------*/
+/*                                                                            */
+/*    Module:       main.cpp                                                  */
+/*    Author:       Connor White -> Aggie Robotics                            */
+/*    Created:      Thu Jun 21 2024                                           */
+/*    Description:  Whooplib Template                                         */
+/*                                                                            */
+/*    Contributions:                                                          */
+/*      2775 Josh:                                                            */
+/*        https://github.com/JacksonAreaRobotics/JAR-Template                 */
+/*      Intel:                                                                */
+/*        https://github.com/IntelRealSense/librealsense                      */
+/*      PiLons:                                                               */
+/*        http://thepilons.ca/wp-content/uploads/2018/10/Tracking.pdf         */
+/*      Andrew Walker:                                                        */
+/*        https://github.com/AndrewWalker/Dubins-Curves/tree/master           */
+/*      Alex:                                                                 */
+/*        https://www.learncpp.com/                                           */
+/*                                                                            */
+/*----------------------------------------------------------------------------*/
+#include "vex.h"
+#include "whooplib.h"
+
+using namespace vex;
+
+// A global instance of competition
+competition Competition;
+
+////////////////////////////////////////////////////////////
+/**
+ *    Globals
+ */
+////////////////////////////////////////////////////////////
+
+// Primary controller
+WhoopController controller1(joystickmode::joystickmode_split_arcade, controllertype::controller_primary);
+
+// Left drive motors
+WhoopMotor l1(PORT12, cartridge::blue, reversed::yes_reverse);
+WhoopMotor l2(PORT13, cartridge::blue, reversed::yes_reverse);
+WhoopMotor l3(PORT14, cartridge::blue, reversed::yes_reverse);
+WhoopMotor l4(PORT15, cartridge::blue, reversed::yes_reverse);
+WhoopMotorGroup left_motors({&l1, &l2, &l3, &l4});
+
+// Right drive motors
+WhoopMotor r1(PORT1, cartridge::blue, reversed::no_reverse);
+WhoopMotor r2(PORT2, cartridge::blue, reversed::no_reverse);
+WhoopMotor r3(PORT3, cartridge::blue, reversed::no_reverse);
+WhoopMotor r4(PORT4, cartridge::blue, reversed::no_reverse);
+WhoopMotorGroup right_motors({&r1, &r2, &r3, &r4});
+//...
 ```
 
 <!-- tabs:end -->
@@ -104,6 +293,121 @@ You are pretty much required to have an inertial sensor with the robot.
 WhoopInertial inertial_sensor(PORT7);
 ```
 
+#### **Applied: PROS**
+
+#### `main.cpp`
+
+```cpp
+/**
+ * Module:       main.cpp
+ * Author:       Connor White -> Aggie Robotics
+ * Created:      Thu Jun 21 2024
+ * Description:  Whooplib Template
+ *
+ * Contributions:
+ *   2775 Josh:
+ *      https://github.com/JacksonAreaRobotics/JAR-Template
+ *   Intel:
+ *      https://github.com/IntelRealSense/librealsense
+ *   PiLons:
+ *      http://thepilons.ca/wp-content/uploads/2018/10/Tracking.pdf
+ *   Andrew Walker:
+ *      https://github.com/AndrewWalker/Dubins-Curves/tree/master
+ *   Alex:
+ *      https://www.learncpp.com/
+ *
+ */
+#include "main.h"
+
+////////////////////////////////////////////////////////////
+/**
+ *    Globals
+ */
+////////////////////////////////////////////////////////////
+
+// Primary controller
+WhoopController controller1(joystickmode::joystickmode_split_arcade, controllertype::controller_primary);
+
+// Left drive motors
+WhoopMotor l1(PORT12, cartridge::blue, reversed::yes_reverse);
+WhoopMotor l2(PORT13, cartridge::blue, reversed::yes_reverse);
+WhoopMotor l3(PORT14, cartridge::blue, reversed::yes_reverse);
+WhoopMotor l4(PORT15, cartridge::blue, reversed::yes_reverse);
+WhoopMotorGroup left_motors({&l1, &l2, &l3, &l4});
+
+// Right drive motors
+WhoopMotor r1(PORT1, cartridge::blue, reversed::no_reverse);
+WhoopMotor r2(PORT2, cartridge::blue, reversed::no_reverse);
+WhoopMotor r3(PORT3, cartridge::blue, reversed::no_reverse);
+WhoopMotor r4(PORT4, cartridge::blue, reversed::no_reverse);
+WhoopMotorGroup right_motors({&r1, &r2, &r3, &r4});
+
+// Sensors
+WhoopInertial inertial_sensor(PORT7);
+//...
+```
+
+#### **Applied: VEXCode**
+
+#### `main.cpp`
+
+```cpp
+/*----------------------------------------------------------------------------*/
+/*                                                                            */
+/*    Module:       main.cpp                                                  */
+/*    Author:       Connor White -> Aggie Robotics                            */
+/*    Created:      Thu Jun 21 2024                                           */
+/*    Description:  Whooplib Template                                         */
+/*                                                                            */
+/*    Contributions:                                                          */
+/*      2775 Josh:                                                            */
+/*        https://github.com/JacksonAreaRobotics/JAR-Template                 */
+/*      Intel:                                                                */
+/*        https://github.com/IntelRealSense/librealsense                      */
+/*      PiLons:                                                               */
+/*        http://thepilons.ca/wp-content/uploads/2018/10/Tracking.pdf         */
+/*      Andrew Walker:                                                        */
+/*        https://github.com/AndrewWalker/Dubins-Curves/tree/master           */
+/*      Alex:                                                                 */
+/*        https://www.learncpp.com/                                           */
+/*                                                                            */
+/*----------------------------------------------------------------------------*/
+#include "vex.h"
+#include "whooplib.h"
+
+using namespace vex;
+
+// A global instance of competition
+competition Competition;
+
+////////////////////////////////////////////////////////////
+/**
+ *    Globals
+ */
+////////////////////////////////////////////////////////////
+
+// Primary controller
+WhoopController controller1(joystickmode::joystickmode_split_arcade, controllertype::controller_primary);
+
+// Left drive motors
+WhoopMotor l1(PORT12, cartridge::blue, reversed::yes_reverse);
+WhoopMotor l2(PORT13, cartridge::blue, reversed::yes_reverse);
+WhoopMotor l3(PORT14, cartridge::blue, reversed::yes_reverse);
+WhoopMotor l4(PORT15, cartridge::blue, reversed::yes_reverse);
+WhoopMotorGroup left_motors({&l1, &l2, &l3, &l4});
+
+// Right drive motors
+WhoopMotor r1(PORT1, cartridge::blue, reversed::no_reverse);
+WhoopMotor r2(PORT2, cartridge::blue, reversed::no_reverse);
+WhoopMotor r3(PORT3, cartridge::blue, reversed::no_reverse);
+WhoopMotor r4(PORT4, cartridge::blue, reversed::no_reverse);
+WhoopMotorGroup right_motors({&r1, &r2, &r3, &r4});
+
+// Sensors
+WhoopInertial inertial_sensor(PORT7);
+//...
+```
+
 <!-- tabs:end -->
 
 
@@ -116,8 +420,127 @@ However, forward and sideways trackers are recommended (but optional). These are
 #### **VEXCode & PROS**
 
 ```cpp
-WhoopRotation forward_tracker(PORT6, reversed::yes_reverse);
-WhoopRotation sideways_tracker(PORT9, reversed::yes_reverse);
+WhoopRotation forward_tracker(PORT6, reversed::no_reverse);
+WhoopRotation sideways_tracker(PORT9, reversed::no_reverse);
+```
+
+#### **Applied: PROS**
+
+#### `main.cpp`
+
+```cpp
+/**
+ * Module:       main.cpp
+ * Author:       Connor White -> Aggie Robotics
+ * Created:      Thu Jun 21 2024
+ * Description:  Whooplib Template
+ *
+ * Contributions:
+ *   2775 Josh:
+ *      https://github.com/JacksonAreaRobotics/JAR-Template
+ *   Intel:
+ *      https://github.com/IntelRealSense/librealsense
+ *   PiLons:
+ *      http://thepilons.ca/wp-content/uploads/2018/10/Tracking.pdf
+ *   Andrew Walker:
+ *      https://github.com/AndrewWalker/Dubins-Curves/tree/master
+ *   Alex:
+ *      https://www.learncpp.com/
+ *
+ */
+#include "main.h"
+
+////////////////////////////////////////////////////////////
+/**
+ *    Globals
+ */
+////////////////////////////////////////////////////////////
+
+// Primary controller
+WhoopController controller1(joystickmode::joystickmode_split_arcade, controllertype::controller_primary);
+
+// Left drive motors
+WhoopMotor l1(PORT12, cartridge::blue, reversed::yes_reverse);
+WhoopMotor l2(PORT13, cartridge::blue, reversed::yes_reverse);
+WhoopMotor l3(PORT14, cartridge::blue, reversed::yes_reverse);
+WhoopMotor l4(PORT15, cartridge::blue, reversed::yes_reverse);
+WhoopMotorGroup left_motors({&l1, &l2, &l3, &l4});
+
+// Right drive motors
+WhoopMotor r1(PORT1, cartridge::blue, reversed::no_reverse);
+WhoopMotor r2(PORT2, cartridge::blue, reversed::no_reverse);
+WhoopMotor r3(PORT3, cartridge::blue, reversed::no_reverse);
+WhoopMotor r4(PORT4, cartridge::blue, reversed::no_reverse);
+WhoopMotorGroup right_motors({&r1, &r2, &r3, &r4});
+
+// Sensors
+WhoopInertial inertial_sensor(PORT7);
+WhoopRotation forward_tracker(PORT6, reversed::no_reverse);
+WhoopRotation sideways_tracker(PORT9, reversed::no_reverse);
+//...
+```
+
+#### **Applied: VEXCode**
+
+#### `main.cpp`
+
+```cpp
+/*----------------------------------------------------------------------------*/
+/*                                                                            */
+/*    Module:       main.cpp                                                  */
+/*    Author:       Connor White -> Aggie Robotics                            */
+/*    Created:      Thu Jun 21 2024                                           */
+/*    Description:  Whooplib Template                                         */
+/*                                                                            */
+/*    Contributions:                                                          */
+/*      2775 Josh:                                                            */
+/*        https://github.com/JacksonAreaRobotics/JAR-Template                 */
+/*      Intel:                                                                */
+/*        https://github.com/IntelRealSense/librealsense                      */
+/*      PiLons:                                                               */
+/*        http://thepilons.ca/wp-content/uploads/2018/10/Tracking.pdf         */
+/*      Andrew Walker:                                                        */
+/*        https://github.com/AndrewWalker/Dubins-Curves/tree/master           */
+/*      Alex:                                                                 */
+/*        https://www.learncpp.com/                                           */
+/*                                                                            */
+/*----------------------------------------------------------------------------*/
+#include "vex.h"
+#include "whooplib.h"
+
+using namespace vex;
+
+// A global instance of competition
+competition Competition;
+
+////////////////////////////////////////////////////////////
+/**
+ *    Globals
+ */
+////////////////////////////////////////////////////////////
+
+// Primary controller
+WhoopController controller1(joystickmode::joystickmode_split_arcade, controllertype::controller_primary);
+
+// Left drive motors
+WhoopMotor l1(PORT12, cartridge::blue, reversed::yes_reverse);
+WhoopMotor l2(PORT13, cartridge::blue, reversed::yes_reverse);
+WhoopMotor l3(PORT14, cartridge::blue, reversed::yes_reverse);
+WhoopMotor l4(PORT15, cartridge::blue, reversed::yes_reverse);
+WhoopMotorGroup left_motors({&l1, &l2, &l3, &l4});
+
+// Right drive motors
+WhoopMotor r1(PORT1, cartridge::blue, reversed::no_reverse);
+WhoopMotor r2(PORT2, cartridge::blue, reversed::no_reverse);
+WhoopMotor r3(PORT3, cartridge::blue, reversed::no_reverse);
+WhoopMotor r4(PORT4, cartridge::blue, reversed::no_reverse);
+WhoopMotorGroup right_motors({&r1, &r2, &r3, &r4});
+
+// Sensors
+WhoopInertial inertial_sensor(PORT7);
+WhoopRotation forward_tracker(PORT6, reversed::no_reverse);
+WhoopRotation sideways_tracker(PORT9, reversed::no_reverse);
+//...
 ```
 
 <!-- tabs:end -->
@@ -220,7 +643,7 @@ Note the `1.51_in` that indicates inches. This is an automatic formatting scheme
 >);
 >```
 >
->| Wheel Type | Actual Size | Constant | Image |
+>| Wheel Type | Actual Size | `Omniwheel` | Image |
 >| --- | --- | --- | --- |
 >|New 2”|2.125|`Omniwheel::NEW_2`|![IMG](../images/2New.png)|
 >|New 2.75”|2.75|`Omniwheel::NEW_275`|![IMG](../images/275New.png)|
@@ -303,7 +726,7 @@ WhoopDriveOdomUnit odom_unit(
 >);
 >```
 >
->| Wheel Type | Actual Size | Constant | Image |
+>| Wheel Type | Actual Size | `Omniwheel` | Image |
 >| --- | --- | --- | --- |
 >|New 2”|2.125|`Omniwheel::NEW_2`|![IMG](../images/2New.png)|
 >|New 2.75”|2.75|`Omniwheel::NEW_275`|![IMG](../images/275New.png)|
