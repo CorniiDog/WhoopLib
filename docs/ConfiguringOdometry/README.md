@@ -713,16 +713,18 @@ WhoopDriveOdomUnit odom_unit(
 >[!NOTE]
 >There are also pre-set omni-wheel dimensions that you can use in WhoopLib, as tribute to [LemLib](https://lemlib.readthedocs.io/en/v0.5.0/tutorials/2_configuration.html#wheel-diameter)
 >
-> For example, using the New 2.75" wheels: ![IMG](../images/275NewTiny.png)
+> For example, using the New 2.75" wheel for the sideways tracker: ![IMG](../images/275NewTiny.png)
 >```cpp
 >WhoopDriveOdomUnit odom_unit(
->    1.51_in,           // The forward tracker distance from the odom unit's center. (positive implies a shift to the right from the odom unit's center)
->    Omniwheel::NEW_275,         // Diameter of the forward tracker (e.g., 3.25_in for 3.25-inch wheels).
->    -4.468_in,         // The sideways tracker distance from the odom unit's center (positive implies a shift forward from the odom unit center)
->    Omniwheel::NEW_275,         // Diameter of the sideways tracker (e.g., 3.25_in for 3.25-inch wheels).
->    &inertial_sensor,  // Pointer to the WhoopInertial sensor
->    &forward_tracker,  // Pointer to the forward tracker, as a WhoopRotation sensor
->    &sideways_tracker  // Pointer to the sideways tracker, as a WhoopRotation sensor
+>  6.313_in,   // Distance between the center of the odom unit and the right wheels
+>  3_in,       // Diameter of drivetrain wheels
+>  1.0/2.0,    // Gear Ratio of Drivetrain (If [motor is powering 32t] connected to [64t sharing shaft with drive wheel], it would be ratio = 32/64 = 1.0/2.0) 
+>  1.2_in,     // Sideways tracker distance from the center of the robot's rotation. (positive implies a shift forward from the drivetrain's center)
+>  Omniwheel::NEW_275,  // Diameter of the sideways tracker (e.g., 3.25_in for 3.25-inch wheels).
+>  &inertial_sensor, 
+>  &sideways_tracker, 
+>  &left_motors, 
+>  &right_motors
 >);
 >```
 >
