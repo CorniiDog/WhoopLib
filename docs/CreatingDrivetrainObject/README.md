@@ -29,26 +29,66 @@ If you want to tune your own custom-parameters, you can do so via the following:
 
 ```cpp
 PursuitParams pursuit_parameters(
-    5_in,        // Radius of the turns
-    5_in,        // Pure Pursuit look ahead distance
-    8.0_volts,   // Pure pursuit forward max motor voltage (0.0, 12.0]
-    12.0_volts,  // Pure pursuit turning max motor voltage (0.0, 12.0]
-    50.0_volts,  // The maximum voltage change per second, as a slew rate (only applies speeding up)
-    1.25_in,     // Settle Distance. Exits when within this distance of target
-    1_deg,       // Settle Rotation. Exits when within this rotation of target
-    0.3_sec,     // Minimum time to be considered settled, in seconds
-    0_sec,       // Time after which to give up and move on, in seconds (set to 0 to disable)
-    14_kp,       // Turning (kP) Proportional Tuning
-    0.1_ki,      // Turning (kI) Integral Tuning
-    20_kd,       // Turning (kD) Derivative Tuning
-    15_deg,      // The rotation distance (error) to activate turning_ki
-    55_kp,       // Forward (kP) Proportional Tuning
-    0.01_ki,     // Forward (kI) Integral Tuning
-    250_kd,      // Forward (kD) Derivative Tuning
-    2_in,        // The forward distance (error) to activate forward_ki
-    100_points   // The number of points when generating the path. More points mean higher detail of the path, but at a higher computational cost
-);
+    /////////////////////////
+    // Path Generation
+    /////////////////////////
+    // Radius of the turns
+    5_in 
 
+    /////////////////////////
+    // Pure Pursuit
+    /////////////////////////
+    // Pure Pursuit look ahead distance
+    ,5_in
+    // The number of points when generating the path. More points mean higher detail of the path, but at a higher computational cost
+    ,100_points 
+
+    /////////////////////////
+    // Motor Voltages
+    /////////////////////////
+    // Pure pursuit forward max motor voltage (0.0, 12.0]
+    ,8.0_volts
+    // Pure pursuit turning max motor voltage (0.0, 12.0]
+    ,12.0_volts
+    // The maximum voltage change per second, as a slew rate (only applies speeding up)
+    ,200.0_volts
+
+    /////////////////////////
+    // Settling
+    /////////////////////////
+    // Settle Distance. Exits when within this distance of target
+    ,1.25_in
+    // Settle Rotation. Exits when within this rotation of target
+    ,1.1_deg
+    // Minimum time to be considered settled, in seconds
+    ,0.35_sec
+    // Time after which to give up and move on, in seconds (set to 0 to disable)
+    ,0_sec
+    
+    /////////////////////////
+    // Turning PID
+    /////////////////////////
+    // Turning (kP) Proportional Tuning
+    ,12_kp
+    // Turning (kI) Integral Tuning
+    ,0.4_ki
+    // Turning (kD) Derivative Tuning
+    ,50.0_kd
+    // The rotation distance (error) to activate turning_ki
+    ,20.0_deg
+
+    /////////////////////////
+    // Forward PID
+    /////////////////////////
+    // Forward (kP) Proportional Tuning
+    ,50.0_kp
+    // Forward (kI) Integral Tuning
+    ,0.1_ki
+    // Forward (kD) Derivative Tuning
+    ,250.0_kd
+    // The forward distance (error) to activate forward_ki
+    ,2.0_in
+);
 ```
 
 <!-- tabs:end -->
