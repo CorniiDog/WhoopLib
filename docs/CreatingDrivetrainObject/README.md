@@ -109,6 +109,7 @@ WhoopLib has misc units which are:
 | `_kp` | PID kP |
 | `_ki` | PID kI |
 | `_kd` | PID kD |
+| `_ka` | PID kA (Integral Anti-Windup)|
 | `_points` | Pursuit Path Points |
 
 The WhoopLib uses the entirety of PID for turning and pure pursuit forward motion. This means that the robots movements, if configured correctly, are extremely precise to roughly ±```1.25``` inches and ±```1``` degrees for the pure pursuit's end-position. The robot uses Dubins-Curves to generate the sub-paths. Therefore, the robot simultaneously acts as a car, which is why there is a variable for the radius of the turns. Additionally, the pure pursuit look ahead distance is how far to look ahead in the path. The number of points is how many points when generating a path. Default is ```100```.
