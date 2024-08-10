@@ -50,8 +50,6 @@ PursuitParams pursuit_parameters(
     ,8.0_volts
     // Pure pursuit turning max motor voltage (0.0, 12.0]
     ,12.0_volts
-    // The maximum voltage change per second, as a slew rate (only applies speeding up)
-    ,200.0_volts
 
     /////////////////////////
     // Settling
@@ -61,7 +59,7 @@ PursuitParams pursuit_parameters(
     // Settle Rotation. Exits when within this rotation of target
     ,1.1_deg
     // Minimum time to be considered settled, in seconds
-    ,0.35_sec
+    ,0.0_sec
     // Time after which to give up and move on, in seconds (set to 0 to disable)
     ,0_sec
     
@@ -69,13 +67,18 @@ PursuitParams pursuit_parameters(
     // Turning PID
     /////////////////////////
     // Turning (kP) Proportional Tuning
-    ,12_kp
+    ,14_kp
     // Turning (kI) Integral Tuning
-    ,0.4_ki
+    ,0.2_ki
     // Turning (kD) Derivative Tuning
-    ,50.0_kd
+    ,95.0_kd
+    // Turning (kA) Integral anti-windup Tuning. Higher value implies greater anti-windup near 0. 
+    // NOTE: Affected by turning_i_activation
+    ,1.0_ka
     // The rotation distance (error) to activate turning_ki
     ,20.0_deg
+    // The maximum turning voltage change per second, as a slew rate
+    ,250.0_volts
 
     /////////////////////////
     // Forward PID
@@ -86,8 +89,13 @@ PursuitParams pursuit_parameters(
     ,0.1_ki
     // Forward (kD) Derivative Tuning
     ,250.0_kd
+    // Forward (kA) Integral anti-windup Tuning. Higher value implies greater anti-windup near 0. 
+    // NOTE: Affected by forward_i_activation
+    ,0.0_ka
     // The forward distance (error) to activate forward_ki
     ,2.0_in
+    // The maximum forward voltage change per second, as a slew rate
+    ,150.0_volts
 );
 ```
 
