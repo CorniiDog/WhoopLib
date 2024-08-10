@@ -72,7 +72,7 @@ PursuitParams pursuit_parameters(
     ,0.2_ki
     // Turning (kD) Derivative Tuning
     ,95.0_kd
-    // Turning (kA) Integral anti-windup Tuning. Higher value implies greater anti-windup near 0. 
+    // Turning (kA) Integral anti-windup Tuning. Higher value implies greater anti-windup near error=0. 
     // NOTE: Affected by turning_i_activation
     ,1.0_ka
     // The rotation distance (error) to activate turning_ki
@@ -89,7 +89,7 @@ PursuitParams pursuit_parameters(
     ,0.1_ki
     // Forward (kD) Derivative Tuning
     ,250.0_kd
-    // Forward (kA) Integral anti-windup Tuning. Higher value implies greater anti-windup near 0. 
+    // Forward (kA) Integral anti-windup Tuning. Higher value implies greater anti-windup near error=0. 
     // NOTE: Affected by forward_i_activation
     ,0.0_ka
     // The forward distance (error) to activate forward_ki
