@@ -74,6 +74,9 @@ To start off with WhoopLib, head to: https://connoratmos.github.io/WhoopLib/
 - Capability to Use Lidar
 - Virtual Highway system
 
+>[!WARNING]
+>"WhoopLib" and "WhoopLib Zero" is **NOT** associated with Aggie Robotics. It is **ONLY** associated with me, Connor White.
+
 ## Acknowledgements
 
  - [E-Bots πLons](http://thepilons.ca/wp-content/uploads/2018/10/Tracking.pdf): Odometry Documentation
