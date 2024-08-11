@@ -78,7 +78,7 @@ To start off with WhoopLib, head to: https://connoratmos.github.io/WhoopLib/
 >"WhoopLib" and "WhoopLib Zero" is **NOT** associated with Aggie Robotics. It is **ONLY** associated with me, Connor White.
 
 >[!IMPORTANT]
->"WhoopLib Python" and the Vision Tesseract is in its very early stages, and therefore does not actively transfer ML object data to the V5 robot. At the moment, it is up to tne end user to figure the Python back-end for the Jetson Nano. The back-end is displayed in a folder on the desktop. Additionally, odometry fusion highly depends on the T265 factory-calibrated quality, with can vary both by product and over time.
+>"WhoopLib Python" and the Vision Tesseract is in its very early stages, and therefore does not actively transfer ML object data to the V5 robot. At the moment, it is up to the end user to figure the Python back-end for the Jetson Nano. The back-end is displayed in a folder on the desktop. Additionally, odometry fusion highly depends on the T265 factory-calibrated quality, with can vary both by product and over time.
 
 ## Acknowledgements
 
