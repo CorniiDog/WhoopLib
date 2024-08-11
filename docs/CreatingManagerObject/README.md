@@ -13,7 +13,7 @@ Certain objects are nodes. That is that they are inherited from the ```ComputeNo
 #### **VEXCode & PROS**
 
 ```cpp
-ComputeManager manager({&buffer_system, &jetson_commander, &robot_drivetrain, &controller1});
+ComputeManager manager({&buffer_system, &jetson_commander, &robot_drivetrain, &controller1, $auton_selector});
 ```
 
 <!-- tabs:end -->
@@ -25,7 +25,7 @@ ComputeManager manager({&buffer_system, &jetson_commander, &robot_drivetrain, &c
 #### **VEXCode & PROS**
 
 ```cpp
-ComputeManager manager({&robot_drivetrain, &controller1});
+ComputeManager manager({&robot_drivetrain, &controller1, &auton_selector});
 ```
 
 <!-- tabs:end -->
@@ -43,13 +43,13 @@ Then, in your main.cpp add the following to your ```pre_auton``` function for VE
 
 ```cpp
 void pre_auton() {
+    robot_drivetrain.set_state(drivetrainState::mode_disabled);
+    auton_selector.run_selector();
 
-  // Initializing Robot Configuration. DO NOT REMOVE!
-  vexcodeInit();
-  manager.start();
-  robot_drivetrain.set_state(drivetrainState::mode_disabled);
-  jetson_commander.initialize(); // If you don't have Tesseract, omit this line
-  robot_drivetrain.calibrate();
+    // Initializing Robot Configuration. DO NOT REMOVE!
+    vexcodeInit();
+    controller1.notify("Initializing");
+    manager.start();
 }
 ```
 
@@ -59,9 +59,9 @@ void pre_auton() {
 void initialize() {
 	pros::lcd::initialize();
 	pros::lcd::set_text(1, "Hello PROS User!");
-	manager.start();
-  jetson_commander.initialize(); // If you don't have Tesseract, omit this line
-  robot_drivetrain.calibrate();
+	auton_selector.run_selector();
+  controller1.notify("Initializing");
+  manager.start();
 }
 ```
 
@@ -82,7 +82,7 @@ Add the following to your ```autonomous``` function:
 ```cpp
 void autonomous() {
   robot_drivetrain.set_state(drivetrainState::mode_autonomous);
-  // Auton code here
+  auton_selector.run_autonomous();
 }
 ```
 
@@ -153,7 +153,63 @@ WhoopDrivetrain robot_drivetrain(
     &right_motors         // Pointer to the right motor group (optionally can be a list of motors as well)
 );
 
-ComputeManager manager({&buffer_system, &jetson_commander, &robot_drivetrain, &controller1});
+/**
+ * My first autonomous routine
+ */
+void auton_1(){
+    robot_drivetrain.set_pose_units(PoseUnits::in_deg_cw);
+    robot_drivetrain.set_pose(0, 0, 0);
+
+    // robot_drivetrain.turn_to_position(15, 15);
+    robot_drivetrain.drive_forward(15);
+
+    robot_drivetrain.turn_to(90);
+
+    robot_drivetrain.drive_forward(-15);
+
+    robot_drivetrain.drive_forward(15);
+
+    robot_drivetrain.turn_to(0);
+
+    robot_drivetrain.drive_forward(-15);
+
+    // robot_drivetrain.drive_to_point(15, 15);
+    // robot_drivetrain.reverse_to_point(0,0);
+    robot_drivetrain.drive_through_path({{15, 15, 0}, {0, 0, 90}}, 7);
+    robot_drivetrain.reverse_through_path({{15, 15, 180}, {0, 0, 180}}, 7);
+}
+
+/**
+ * My second autonomous routine
+ */
+void auton_2(){
+    robot_drivetrain.set_pose_units(PoseUnits::in_deg_cw);
+    robot_drivetrain.set_pose(-30, -10, 0);
+
+    robot_drivetrain.drive_forward(15);
+
+    robot_drivetrain.turn_to(0);
+
+    robot_drivetrain.drive_forward(-15);
+}
+
+/**
+ * My third autonomous routine
+ */
+void auton_3(){
+    robot_drivetrain.set_pose_units(PoseUnits::in_deg_cw);
+    robot_drivetrain.set_pose(25, 0, 0);
+
+    robot_drivetrain.reverse_through_path({{15, 15, 180}, {0, 0, 180}}, 7);
+}
+
+WhoopAutonSelector auton_selector(&controller1, {
+    AutonRoutine("First Auton", auton_1),
+    AutonRoutine("Second Auton", auton_2),
+    AutonRoutine("Third Auton", auton_3)
+}, "auton.txt");
+
+ComputeManager manager({&buffer_system, &jetson_commander, &robot_drivetrain, &controller1, &auton_selector});
 
 /*---------------------------------------------------------------------------*/
 /*                          Pre-Autonomous Functions                         */
@@ -165,12 +221,12 @@ ComputeManager manager({&buffer_system, &jetson_commander, &robot_drivetrain, &c
 /*  not every time that the robot is disabled.                               */
 /*---------------------------------------------------------------------------*/
 void pre_auton() {
+  robot_drivetrain.set_state(drivetrainState::mode_disabled);
+  auton_selector.run_selector();
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
+  controller1.notify("Initializing");
   manager.start();
-  robot_drivetrain.set_state(drivetrainState::mode_disabled);
-  jetson_commander.initialize(); // If you don't have Tesseract, omit this line
-  robot_drivetrain.calibrate();
 }
 
 /*---------------------------------------------------------------------------*/
@@ -185,7 +241,7 @@ void pre_auton() {
 
 void autonomous() {
   robot_drivetrain.set_state(drivetrainState::mode_autonomous);
-  // Auton code here
+  auton_selector.run_autonomous();
 }
 
 /*---------------------------------------------------------------------------*/
@@ -202,7 +258,7 @@ void usercontrol() {
 
   // User control code here, inside the loop
   while (1) {
-    wait(100, msec);
+    wait(20, msec);
   }
 }
 
@@ -238,7 +294,63 @@ WhoopDrivetrain robot_drivetrain(
     &right_motors         // Pointer to the right motor group (optionally can be a list of motors as well)
 );
 
-ComputeManager manager({&buffer_system, &jetson_commander, &robot_drivetrain, &controller1});
+/**
+ * My first autonomous routine
+ */
+void auton_1(){
+    robot_drivetrain.set_pose_units(PoseUnits::in_deg_cw);
+    robot_drivetrain.set_pose(0, 0, 0);
+
+    // robot_drivetrain.turn_to_position(15, 15);
+    robot_drivetrain.drive_forward(15);
+
+    robot_drivetrain.turn_to(90);
+
+    robot_drivetrain.drive_forward(-15);
+
+    robot_drivetrain.drive_forward(15);
+
+    robot_drivetrain.turn_to(0);
+
+    robot_drivetrain.drive_forward(-15);
+
+    // robot_drivetrain.drive_to_point(15, 15);
+    // robot_drivetrain.reverse_to_point(0,0);
+    robot_drivetrain.drive_through_path({{15, 15, 0}, {0, 0, 90}}, 7);
+    robot_drivetrain.reverse_through_path({{15, 15, 180}, {0, 0, 180}}, 7);
+}
+
+/**
+ * My second autonomous routine
+ */
+void auton_2(){
+    robot_drivetrain.set_pose_units(PoseUnits::in_deg_cw);
+    robot_drivetrain.set_pose(-30, -10, 0);
+
+    robot_drivetrain.drive_forward(15);
+
+    robot_drivetrain.turn_to(0);
+
+    robot_drivetrain.drive_forward(-15);
+}
+
+/**
+ * My third autonomous routine
+ */
+void auton_3(){
+    robot_drivetrain.set_pose_units(PoseUnits::in_deg_cw);
+    robot_drivetrain.set_pose(25, 0, 0);
+
+    robot_drivetrain.reverse_through_path({{15, 15, 180}, {0, 0, 180}}, 7);
+}
+
+WhoopAutonSelector auton_selector(&controller1, {
+    AutonRoutine("First Auton", auton_1),
+    AutonRoutine("Second Auton", auton_2),
+    AutonRoutine("Third Auton", auton_3)
+}, "auton.txt");
+
+ComputeManager manager({&buffer_system, &jetson_commander, &robot_drivetrain, &controller1, &auton_selector});
 
 /**
  * Runs initialization code. This occurs as soon as the program is started.
@@ -249,9 +361,9 @@ ComputeManager manager({&buffer_system, &jetson_commander, &robot_drivetrain, &c
 void initialize() {
 	pros::lcd::initialize();
 	pros::lcd::set_text(1, "Hello PROS User!");
-	manager.start();
-  jetson_commander.initialize(); // If you don't have Tesseract, omit this line
-  robot_drivetrain.calibrate();
+	auton_selector.run_selector();
+  controller1.notify("Initializing");
+  manager.start();
 }
 
 /**
@@ -287,7 +399,7 @@ void competition_initialize() {}
  */
 void autonomous() {
   robot_drivetrain.set_state(drivetrainState::mode_autonomous);
-  // Auton code here
+  auton_selector.run_autonomous();
 }
 
 /**

@@ -5,6 +5,7 @@
 - [Configuring Vision Odometry](ConfiguringVisionOdom/README.md)
 - [Configuring Odometry Fusion](ConfiguringOdomFusion/README.md)
 - [Creating Drivetrain Object](CreatingDrivetrainObject/README.md)
+- [Creating Auton Selector](CreatingAutonSelector/README.md)
 - [Creating Manager Object](CreatingManagerObject/README.md)
 - [WhoopDrivetrain Commands](DrivetrainCommands/README.md)
 - [JetsonCommander Commands](JetsonCommands/README.md)
