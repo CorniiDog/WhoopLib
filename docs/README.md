@@ -1,7 +1,7 @@
 
 ![Logo](./images/WhoopLibBanner.png)
 
-# The Most Powerful SLAM Solution in VEX.
+# The Most Advanced SLAM Solution in VEX.
 
 ![GitHub Release](https://img.shields.io/github/v/release/ConnorAtmos/WhoopLib?style=for-the-badge&color=%23500)
 ![GitHub forks](https://img.shields.io/github/forks/ConnorAtmos/WhoopLib?style=for-the-badge&color=%23500)
