@@ -72,9 +72,9 @@ PursuitParams pursuit_parameters(
     ,0.2_ki
     // Turning (kD) Derivative Tuning
     ,95.0_kd
-    // Turning (kA) Integral anti-windup Tuning. Higher value implies greater anti-windup near error=0. 
+    // Turning (kR) Integral anti-windup Tuning. Higher value implies greater anti-windup near error=0. 
     // NOTE: Affected by turning_i_activation
-    ,1.0_ka
+    ,1.0_kr
     // The rotation distance (error) to activate turning_ki
     ,20.0_deg
     // The maximum turning voltage change per second, as a slew rate
@@ -89,9 +89,9 @@ PursuitParams pursuit_parameters(
     ,0.1_ki
     // Forward (kD) Derivative Tuning
     ,250.0_kd
-    // Forward (kA) Integral anti-windup Tuning. Higher value implies greater anti-windup near error=0. 
+    // Forward (kR) Integral anti-windup Tuning. Higher value implies greater anti-windup near error=0. 
     // NOTE: Affected by forward_i_activation
-    ,0.0_ka
+    ,0.0_kr
     // The forward distance (error) to activate forward_ki
     ,2.0_in
     // The maximum forward voltage change per second, as a slew rate
@@ -109,7 +109,7 @@ WhoopLib has misc units which are:
 | `_kp` | PID kP |
 | `_ki` | PID kI |
 | `_kd` | PID kD |
-| `_ka` | PID kA (Integral Anti-Windup)|
+| `_kr` | PID kR (Integral Anti-Windup, or "Retracted Windup")|
 | `_points` | Pursuit Path Points |
 
 The WhoopLib uses the entirety of PID for turning and pure pursuit forward motion. This means that the robots movements, if configured correctly, are extremely precise to roughly ±```1.25``` inches and ±```1``` degrees for the pure pursuit's end-position. The robot uses Dubins-Curves to generate the sub-paths. Therefore, the robot simultaneously acts as a car, which is why there is a variable for the radius of the turns. Additionally, the pure pursuit look ahead distance is how far to look ahead in the path. The number of points is how many points when generating a path. Default is ```100```.
