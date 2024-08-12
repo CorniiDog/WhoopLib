@@ -59,7 +59,8 @@ To start off with WhoopLib, head to: https://connoratmos.github.io/WhoopLib/
 - Slew for Motor Movements
 - Motor Voltage to Speed Linearization
 - TwoDPose Class which Handles and Simplifies Linear Algebra Mathematics, Following Similarities to Roblox's CFrames for Ease of Use
-- Autonomous Selector
+- Simplified MicroSD Card File System
+- Autonomous Selector, optionally to permanently save options using MicroSD Card
 - Units system `_in`, `_v`, `_mm`, etc.
 - Slew rate
 - PID Integral anti-windup constant kR (also known as "Retracted Windup")
