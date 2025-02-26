@@ -9,9 +9,9 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-![GitHub Release](https://img.shields.io/github/v/release/ConnorAtmos/WhoopLib?style=for-the-badge&color=%23500)
-![GitHub forks](https://img.shields.io/github/forks/ConnorAtmos/WhoopLib?style=for-the-badge&color=%23500)
-![GitHub Repo stars](https://img.shields.io/github/stars/ConnorAtmos/WhoopLib?style=for-the-badge&color=%23500)
+![GitHub Release](https://img.shields.io/github/v/release/CorniiDog/WhoopLib?style=for-the-badge&color=%23500)
+![GitHub forks](https://img.shields.io/github/forks/CorniiDog/WhoopLib?style=for-the-badge&color=%23500)
+![GitHub Repo stars](https://img.shields.io/github/stars/CorniiDog/WhoopLib?style=for-the-badge&color=%23500)
 [![LinkedIn][linkedin-shield]][linkedin-url]
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
@@ -24,21 +24,21 @@ The most advanced SLAM solution in VEX.
 
 ## Getting Started
 
-To start off with WhoopLib, head to: https://connoratmos.github.io/WhoopLib/
+To start off with WhoopLib, head to: https://CorniiDog.github.io/WhoopLib/
 
 ## Links
 
-[WhoopLib Documentation](https://connoratmos.github.io/WhoopLib/)
+[WhoopLib Documentation](https://CorniiDog.github.io/WhoopLib/)
 
-[WhoopLib Zero - Learn C++ From Zero](https://connoratmos.github.io/WhoopLibZero/)
+[WhoopLib Zero - Learn C++ From Zero](https://CorniiDog.github.io/WhoopLibZero/)
 
-[WhoopLibVEXCode Github](https://github.com/ConnorAtmos/WhoopLibVEXCode)
+[WhoopLibVEXCode Github](https://github.com/CorniiDog/WhoopLibVEXCode)
 
-[WhoopLibPROS Github](https://github.com/ConnorAtmos/WhoopLibPROS)
+[WhoopLibPROS Github](https://github.com/CorniiDog/WhoopLibPROS)
 
-[WhoopLibPython Github](https://github.com/ConnorAtmos/WhoopLibPython)
+[WhoopLibPython Github](https://github.com/CorniiDog/WhoopLibPython)
 
-[Release Notes](https://github.com/ConnorAtmos/WhoopLib/releases/)
+[Release Notes](https://github.com/CorniiDog/WhoopLib/releases/)
 
 ## Features
 
