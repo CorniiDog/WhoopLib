@@ -1,7 +1,5 @@
 ## Hardware For WhoopLib Vision
 
-![Image](../images/Jetson.jpg)
-
 ## Hardware Order Sheet
 
 Here is the hardware required for the WhoopLib Vision System: [Hardware](https://docs.google.com/document/d/18PjxbSG3SLBllnUnM-vADUMu-K1MK63aHSDAzNHEU74/edit?usp=sharing)
