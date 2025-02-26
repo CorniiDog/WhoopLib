@@ -12,11 +12,7 @@
 ![GitHub Release](https://img.shields.io/github/v/release/CorniiDog/WhoopLib?style=for-the-badge&color=%23500)
 ![GitHub forks](https://img.shields.io/github/forks/CorniiDog/WhoopLib?style=for-the-badge&color=%23500)
 ![GitHub Repo stars](https://img.shields.io/github/stars/CorniiDog/WhoopLib?style=for-the-badge&color=%23500)
-[![LinkedIn][linkedin-shield]][linkedin-url]
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/in/connor-white-38a5501a0/
+
 
 The most advanced SLAM solution in VEX.
 
