@@ -1,7 +1,7 @@
 # Getting Started
 
 ## If you do not know C++
-I would suggest learning it first. Fortunately, Connor White has a C++ tutorial at [WhoopLib Zero](https://connoratmos.github.io/WhoopLibZero/#/)
+I would suggest learning it first. Fortunately, Connor White has a C++ tutorial at [WhoopLib Zero](https://CorniiDog.github.io/WhoopLibZero/#/)
 
 
 ## Installation and Download
@@ -18,14 +18,14 @@ I would suggest learning it first. Fortunately, Connor White has a C++ tutorial 
     ```bash
     cd Desktop
 
-    git clone https://github.com/ConnorAtmos/WhoopLibVEXCode
+    git clone https://github.com/CorniiDog/WhoopLibVEXCode
 
     ```
     
     > [!NOTE]
     > If you want to use a specific version of WhoopLib (i.e. `v1.0.0`):
     > ```bash
-    > git clone --branch v1.0.0 https://github.com/ConnorAtmos/WhoopLibVEXCode
+    > git clone --branch v1.0.0 https://github.com/CorniiDog/WhoopLibVEXCode
     > ```
 
 
@@ -47,14 +47,14 @@ I would suggest learning it first. Fortunately, Connor White has a C++ tutorial 
     ```bash
     cd Desktop
 
-    git clone https://github.com/ConnorAtmos/WhoopLibPROS
+    git clone https://github.com/CorniiDog/WhoopLibPROS
 
     ```
 
     > [!NOTE]
     > If you want to use a specific version of WhoopLib (i.e. `v1.0.0`):
     > ```bash
-    > git clone --branch v1.0.0 https://github.com/ConnorAtmos/WhoopLibPROS
+    > git clone --branch v1.0.0 https://github.com/CorniiDog/WhoopLibPROS
     > ```
 
 3. Open the project in VSCode
