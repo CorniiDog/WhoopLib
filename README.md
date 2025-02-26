@@ -72,8 +72,7 @@ To start off with WhoopLib, head to: https://CorniiDog.github.io/WhoopLib/
 - Virtual Highway system
 
 >[!IMPORTANT]
->"WhoopLib" and "WhoopLib Zero" is **NOT** associated with Aggie Robotics team "WHOOP". It is **ONLY** associated with me, Connor White.
->The term "Whoop" is commonly used in various contexts and is not uniquely associated with Aggie Robotics. While Texas A&M culture includes the "Whoop" cheer, it is not a registered trademark by the university. More specifically, the library is called "WhoopLib", not "Whoop Lib" or "WHOOP Lib".
+>WhoopLib is an independent project created by me, Connor White, and is not affiliated with Aggie Robotics or Texas A&M University.
 
 >[!IMPORTANT]
 >"WhoopLib Python" and the Vision Tesseract is in its very early stages, and therefore does not actively transfer ML object data to the V5 robot. At the moment, it is up to the end user to figure the Python back-end for the Jetson Nano. The back-end is displayed in a folder on the desktop. Additionally, odometry fusion highly depends on the T265 factory-calibrated quality, which can vary both by product and over time. Additionally, sending odometry data to the T265 is up to the end user to figure out how to implement, but is not required.
