@@ -91,8 +91,3 @@ To start off with WhoopLib, head to: https://CorniiDog.github.io/WhoopLib/
 
 Distributed under the [MIT](https://choosealicense.com/licenses/mit/) License.
 
-<!-- CONTACT -->
-## Contact
-
-Connor White - connor.sw.personal@gmail.com
-
