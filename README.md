@@ -9,9 +9,9 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-![GitHub Release](https://img.shields.io/github/v/release/CorniiDog/WhoopLib?style=for-the-badge&color=%23500)
-![GitHub forks](https://img.shields.io/github/forks/CorniiDog/WhoopLib?style=for-the-badge&color=%23500)
-![GitHub Repo stars](https://img.shields.io/github/stars/CorniiDog/WhoopLib?style=for-the-badge&color=%23500)
+![GitHub Release](https://img.shields.io/github/v/release/CorniiDog/WhoopLib?style=for-the-badge
+![GitHub forks](https://img.shields.io/github/forks/CorniiDog/WhoopLib?style=for-the-badge
+![GitHub Repo stars](https://img.shields.io/github/stars/CorniiDog/WhoopLib?style=for-the-badge)
 
 
 A Simple SLAM Solution.
