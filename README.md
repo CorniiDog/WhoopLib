@@ -14,7 +14,7 @@
 ![GitHub Repo stars](https://img.shields.io/github/stars/CorniiDog/WhoopLib?style=for-the-badge&color=%23500)
 
 
-The most advanced SLAM solution in VEX.
+A Simple SLAM Solution.
 
 **With both PROS and VEXCode support**
 
