@@ -26,15 +26,11 @@ To start off with WhoopLib, head to: https://CorniiDog.github.io/WhoopLib/
 
 [WhoopLib Documentation](https://CorniiDog.github.io/WhoopLib/)
 
-[WhoopLib Zero - Learn C++ From Zero](https://CorniiDog.github.io/WhoopLibZero/)
-
 [WhoopLibVEXCode Github](https://github.com/CorniiDog/WhoopLibVEXCode)
 
 [WhoopLibPROS Github](https://github.com/CorniiDog/WhoopLibPROS)
 
 [WhoopLibPython Github](https://github.com/CorniiDog/WhoopLibPython)
-
-[Release Notes](https://github.com/CorniiDog/WhoopLib/releases/)
 
 ## Features
 
