@@ -21,12 +21,7 @@ I would suggest learning it first. Fortunately, Connor White has a C++ tutorial 
     git clone https://github.com/CorniiDog/WhoopLibVEXCode
 
     ```
-    
-    > [!NOTE]
-    > If you want to use a specific version of WhoopLib (i.e. `v1.0.0`):
-    > ```bash
-    > git clone --branch v1.0.0 https://github.com/CorniiDog/WhoopLibVEXCode
-    > ```
+
 
 
 3. Open the project in VSCode
@@ -50,12 +45,6 @@ I would suggest learning it first. Fortunately, Connor White has a C++ tutorial 
     git clone https://github.com/CorniiDog/WhoopLibPROS
 
     ```
-
-    > [!NOTE]
-    > If you want to use a specific version of WhoopLib (i.e. `v1.0.0`):
-    > ```bash
-    > git clone --branch v1.0.0 https://github.com/CorniiDog/WhoopLibPROS
-    > ```
 
 3. Open the project in VSCode
 
