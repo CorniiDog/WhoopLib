@@ -34,30 +34,30 @@ To start off with WhoopLib, head to: https://CorniiDog.github.io/WhoopLib/
 
 ## Features
 
-- Visual Odometry/Pose Estimation
-- Wheel Odometry/Pose Estimation, inspired by JAR-Template
-- Communication between V5 Brain and Jetson Nano
-- Fusion Odometry between Visual Odometry and Wheel Odometry
-- Rolling Average Filter for Fusion Odometry
-- WhoopController Class with auto-configuration for Split Arcade, Tank, Left Stick Arcade, and Right Stick Arcade
-- Dubins-Curves Path Creation, thanks to Andrew Walker
-- Pure Pursuit Algorithm
-- Moving between Point A and Point B
-- General PID, modified from JAR-Template
-- Turning by degrees, Turning to degrees, Turning to Face x and y Coordinates
-- Moving Forward and Reverse Functions, alongside Remembering Previous Movement Positions for Improved Resilience
-- Generated Paths with Waypoints to Navigate around the VEX Robotics Field in One Fell Swoop
-- Well-Rounded and Continuously Updated Documentation for a Low Floor yet High Ceiling
-- Slew for Motor Movements
-- Motor Voltage to Speed Linearization
-- TwoDPose Class which Handles and Simplifies Linear Algebra Mathematics, Following Similarities to Roblox's CFrames for Ease of Use
-- Simplified MicroSD Card File System
-- Autonomous Selector, optionally to permanently save options using MicroSD Card
-- Units system `_in`, `_v`, `_mm`, etc.
-- Slew rate
-- PID Integral anti-windup constant kR (also known as "Retracted Windup")
+### Odometry & Pose Estimation
+- Visual odometry / pose estimation
+- Wheel odometry / pose estimation (inspired by JAR-Template)
+- Fusion odometry (visual + wheel) with rolling average filter
 
-## Roadmap
+### Control & Motion
+- `WhoopController` with auto-configuration for Split Arcade, Tank, Left Stick Arcade, and Right Stick Arcade
+- Path generation: Dubins curves (thanks to Andrew Walker) and Pure Pursuit
+- Point-to-point navigation (move between Point A and Point B)
+- High-level motion primitives: precise turning (by degrees / to face coordinates), forward/reverse movement with historical position memory for resilience
+- General PID controller with anti-windup (`kR`, aka "retracted windup")
+- Slew rate limiter for motor movements
+- Motor voltage-to-speed linearization
+
+### Utilities & Abstractions
+- `TwoDPose` class simplifying linear algebra, modeled with similarities to Roblox’s CFrames
+- Units system (`_in`, `_v`, `_mm`, etc.)
+- Simplified MicroSD card file system
+- Autonomous selector with optional persistent saving via MicroSD
+
+### Documentation & Ecosystem
+- Comprehensive and continuously updated documentation for a low floor and high ceiling
+
+## Roadmap (Needs Maintainer)
 
 - Object Detection and Gridded Permanence system
 - Detecting other robots that impede the path of the robot, and drive around
@@ -68,10 +68,10 @@ To start off with WhoopLib, head to: https://CorniiDog.github.io/WhoopLib/
 - Virtual Highway system
 
 >[!IMPORTANT]
->WhoopLib is an independent project created by me, Connor White, and is not affiliated with Aggie Robotics or Texas A&M University.
+>WhoopLib is an independent, student-led project and is not endorsed by or affiliated with Texas A&M University.
 
 >[!IMPORTANT]
->"WhoopLib Python" and the Vision Tesseract is in its very early stages, and therefore does not actively transfer ML object data to the V5 robot. At the moment, it is up to the end user to figure the Python back-end for the Jetson Nano. The back-end is displayed in a folder on the desktop. Additionally, odometry fusion highly depends on the T265 factory-calibrated quality, which can vary both by product and over time. Additionally, sending odometry data to the T265 is up to the end user to figure out how to implement, but is not required.
+>The Python/Jetson backend is experimental. There is no automatic ML data transfer to V5; users must implement their own integration. Odometry fusion depends on the factory calibration quality of the T265, which can vary over time and between units.
 
 ## Acknowledgements
 
