@@ -25,7 +25,7 @@ WhoopController controller1(joystickmode::joystickmode_tank, controllertype::con
 ```cpp
 /**
  * Module:       main.cpp
- * Author:       Connor White -> Aggie Robotics
+ * Author:       Connor White 
  * Created:      Thu Jun 21 2024
  * Description:  Whooplib Template
  *
@@ -63,7 +63,7 @@ WhoopController controller1(joystickmode::joystickmode_split_arcade, controllert
 /*----------------------------------------------------------------------------*/
 /*                                                                            */
 /*    Module:       main.cpp                                                  */
-/*    Author:       Connor White -> Aggie Robotics                            */
+/*    Author:       Connor White                             */
 /*    Created:      Thu Jun 21 2024                                           */
 /*    Description:  Whooplib Template                                         */
 /*                                                                            */
@@ -143,7 +143,7 @@ WhoopMotorGroup right_motors({&r1, &r2, &r3, &r4});
 ```cpp
 /**
  * Module:       main.cpp
- * Author:       Connor White -> Aggie Robotics
+ * Author:       Connor White 
  * Created:      Thu Jun 21 2024
  * Description:  Whooplib Template
  *
@@ -195,7 +195,7 @@ WhoopMotorGroup right_motors({&r1, &r2, &r3, &r4});
 /*----------------------------------------------------------------------------*/
 /*                                                                            */
 /*    Module:       main.cpp                                                  */
-/*    Author:       Connor White -> Aggie Robotics                            */
+/*    Author:       Connor White                             */
 /*    Created:      Thu Jun 21 2024                                           */
 /*    Description:  Whooplib Template                                         */
 /*                                                                            */
@@ -300,7 +300,7 @@ WhoopInertial inertial_sensor(PORT7);
 ```cpp
 /**
  * Module:       main.cpp
- * Author:       Connor White -> Aggie Robotics
+ * Author:       Connor White 
  * Created:      Thu Jun 21 2024
  * Description:  Whooplib Template
  *
@@ -355,7 +355,7 @@ WhoopInertial inertial_sensor(PORT7);
 /*----------------------------------------------------------------------------*/
 /*                                                                            */
 /*    Module:       main.cpp                                                  */
-/*    Author:       Connor White -> Aggie Robotics                            */
+/*    Author:       Connor White                             */
 /*    Created:      Thu Jun 21 2024                                           */
 /*    Description:  Whooplib Template                                         */
 /*                                                                            */
@@ -431,7 +431,7 @@ WhoopRotation sideways_tracker(PORT9, reversed::no_reverse);
 ```cpp
 /**
  * Module:       main.cpp
- * Author:       Connor White -> Aggie Robotics
+ * Author:       Connor White 
  * Created:      Thu Jun 21 2024
  * Description:  Whooplib Template
  *
@@ -488,7 +488,7 @@ WhoopRotation sideways_tracker(PORT9, reversed::no_reverse);
 /*----------------------------------------------------------------------------*/
 /*                                                                            */
 /*    Module:       main.cpp                                                  */
-/*    Author:       Connor White -> Aggie Robotics                            */
+/*    Author:       Connor White                             */
 /*    Created:      Thu Jun 21 2024                                           */
 /*    Description:  Whooplib Template                                         */
 /*                                                                            */
@@ -889,7 +889,7 @@ As a run-down, your code may look like the following:
 /*----------------------------------------------------------------------------*/
 /*                                                                            */
 /*    Module:       main.cpp                                                  */
-/*    Author:       Connor White -> Aggie Robotics                            */
+/*    Author:       Connor White                             */
 /*    Created:      Thu Jun 21 2024                                           */
 /*    Description:  Whooplib Template                                         */
 /*                                                                            */
@@ -972,7 +972,7 @@ WhoopDriveOdomOffset odom_offset(
 ```cpp
 /**
  * Module:       main.cpp
- * Author:       Connor White -> Aggie Robotics
+ * Author:       Connor White 
  * Created:      Thu Jun 21 2024
  * Description:  Whooplib Template
  *
@@ -1056,7 +1056,7 @@ WhoopDriveOdomOffset odom_offset(
 /*----------------------------------------------------------------------------*/
 /*                                                                            */
 /*    Module:       main.cpp                                                  */
-/*    Author:       Connor White -> Aggie Robotics                            */
+/*    Author:       Connor White                             */
 /*    Created:      Thu Jun 21 2024                                           */
 /*    Description:  Whooplib Template                                         */
 /*                                                                            */
@@ -1140,7 +1140,7 @@ WhoopDriveOdomOffset odom_offset(
 ```cpp
 /**
  * Module:       main.cpp
- * Author:       Connor White -> Aggie Robotics
+ * Author:       Connor White 
  * Created:      Thu Jun 21 2024
  * Description:  Whooplib Template
  *
@@ -1226,7 +1226,7 @@ WhoopDriveOdomOffset odom_offset(
 /*----------------------------------------------------------------------------*/
 /*                                                                            */
 /*    Module:       main.cpp                                                  */
-/*    Author:       Connor White -> Aggie Robotics                            */
+/*    Author:       Connor White                             */
 /*    Created:      Thu Jun 21 2024                                           */
 /*    Description:  Whooplib Template                                         */
 /*                                                                            */
@@ -1307,7 +1307,7 @@ WhoopDriveOdomOffset odom_offset(
 ```cpp
 /**
  * Module:       main.cpp
- * Author:       Connor White -> Aggie Robotics
+ * Author:       Connor White 
  * Created:      Thu Jun 21 2024
  * Description:  Whooplib Template
  *
