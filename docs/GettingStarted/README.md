@@ -1,9 +1,5 @@
 # Getting Started
 
-## If you do not know C++
-I would suggest learning it first. Fortunately, Connor White has a C++ tutorial at [WhoopLib Zero](https://CorniiDog.github.io/WhoopLibZero/#/)
-
-
 ## Installation and Download
 
 <!-- tabs:start -->
