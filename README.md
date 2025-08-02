@@ -78,7 +78,6 @@ To start off with WhoopLib, head to: https://CorniiDog.github.io/WhoopLib/
  - [E-Bots πLons](http://thepilons.ca/wp-content/uploads/2018/10/Tracking.pdf): Odometry Documentation
  - [JAR-Template](https://github.com/JacksonAreaRobotics/JAR-Template): Odometry Inspiration
  - [Librealsense](https://github.com/IntelRealSense/librealsense): Depth Capturing
- - [VEX Robotics](https://github.com/VEX-Robotics-AI)
  - [Andrew Walker](https://github.com/AndrewWalker/Dubins-Curves/tree/master): Path Generation with Dubins-Curves
  - [LearnCpp](https://www.learncpp.com/): Resource for learning C++
 
